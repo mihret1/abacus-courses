@@ -10,6 +10,7 @@ import CardMembershipIcon from '@mui/icons-material/CardMembership';
 import VerifiedIcon from '@mui/icons-material/Verified';
 // import '../styles/home.css'
 import person1 from '../assets/person1.jpg'
+import person2 from '../assets/person2.jpg'
 
 
 import VideoSettingsOutlinedIcon from '@mui/icons-material/VideoSettingsOutlined';
@@ -25,6 +26,11 @@ import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 import { IconButton } from '@mui/material';
+
+import LocalLibraryOutlinedIcon from '@mui/icons-material/LocalLibraryOutlined';
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import BadgeOutlinedIcon from '@mui/icons-material/BadgeOutlined';
+import TravelExploreOutlinedIcon from '@mui/icons-material/TravelExploreOutlined';
 
 function Home() {
   const [isHover1,setIsHoverd1]=useState(false)
@@ -93,6 +99,16 @@ function Home() {
       )
     }
 
+    const CardFour=(props)=>{
+      return(
+        <div className='w-72 px-2 h-52 mdd:max-lg:w-64 border-white border-[1px] rounded-md flex flex-col items-center justify-center'>
+              {props.iconn}
+             <h1 className='font-bold text-xl'>{props.title}</h1>
+             <p className='text-center '>{props.desc}</p>
+        </div>
+      )
+    }
+
 
   return (
     <div className='h-[2000px] flex flex-col '>
@@ -135,7 +151,7 @@ function Home() {
 
             {/* section two */}
         <div className='mt-40 grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:flex justify-between  py-2'>
-            <img src={p1} className='w-[400px] max-xs:w-[350px] md:max-lg:w-[350px] lg:max-xl:w-[320px] h-[470px] pt-14'/>
+            <img src={p1} className='w-[400px] max-xs:w-[350px] md:max-lg:w-[350px] lg:max-xl:w-[320px] h-[470px] '/>
             <div className=' flex flex-col w-[550px] max-xs:w-[350px] md:max-lg:w-[400px] lg:max-xl:w-[400px] max-sm:px-2'>
               <p className='text-xl text-[#1F788C] font-bold underline'>about Abacus</p>
               <h1 className='text-[38px] max-sm:text-[20px]   font-bold'>Empowering  learner for a Brigheter Future</h1>
@@ -143,19 +159,19 @@ function Home() {
               Lorem ipsum is a placeholder text commonly
                used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.
               </p>
-               {/* <div className='flex gap-14  py-3'> 
+               <div className='flex gap-14  py-3'> 
                   <div className='flex flex-col text-[#1F788C]'>
-                    <span className='text-[50px] font-bold'>11+ </span>
+                    <span className='text-[40px] font-bold'>11+ </span>
                     <span className='text-gray-600'>Years of experience</span>
                   </div>
                   <div className='w-[1px] bg-black'></div>
                   <div className='flex flex-col pt-3 text-[#1F788C]'>
-                    <span className='text-[50px] font-bold'>1200+ </span>
+                    <span className='text-[40px] font-bold'>1200+ </span>
                     <span className='text-gray-600'>Happy Students</span>
                   </div>
                   
 
-               </div> */}
+               </div>
                <a href='/' className='bg-[#1F788C] text-white w-48 text-xl py-2 px-1 mt-5 text-center max-md:mb-3 '>more about Abacus </a>
             </div>
 
@@ -266,7 +282,42 @@ function Home() {
          </div>
 
          </div>
-    
+         
+
+
+         {/* section five */}
+         <div className='bg-[#0B1546] flex flex-col gap-3 py-16 items-center text-white'>
+          {/* <img src={person2}/> */}
+           <h1 className='text-3xl text-center'>Why Learn with Our Courses</h1>
+           <p className='text-lg'>benefit of  learning with us </p>
+           <div className='grid max-sm:grid-cols-1 sm:max-mdd:grid-cols-2 mdd:max-lgg:grid-cols-3   lgg:grid-cols-4 gap-5  '>
+              <CardFour 
+              iconn={<LocalLibraryOutlinedIcon  sx={{fontSize:60, color:'#F69F37'}} />}
+              title='01.Learn'
+              desc='Lorem ipsum is a placeholder text commonly used to
+               demonstrate the visual form of a '
+              />
+              <CardFour 
+              iconn={< SchoolOutlinedIcon  sx={{fontSize:60, color:'#F69F37'}} />}
+              title='02.Graduate'
+              desc='Lorem ipsum is a placeholder text commonly used to
+               demonstrate the visual form of a '
+              /><CardFour 
+              iconn={<BadgeOutlinedIcon  sx={{fontSize:60, color:'#F69F37'}} />}
+              title='03.Work'
+              desc='Lorem ipsum is a placeholder text commonly used to
+               demonstrate the visual form of a '
+              />
+              <CardFour 
+              iconn={<TravelExploreOutlinedIcon  sx={{fontSize:60, color:'#F69F37'}} />}
+              title='04.Be International'
+              desc='Lorem ipsum is a placeholder text commonly used to
+               demonstrate the visual form of a '
+              />
+           </div>
+         </div>
+
+
     </div>
   
   )

@@ -30,7 +30,7 @@ const Navbar=()=>{
 
 
     return(
-        <div  style={{zIndex: 100,   }}  className={`  ${transparent ? 'bg-white ' : 'bg-transparent'}   ${transparent && 'fixed  '}  w-[100%] `}>
+        <div  style={{zIndex: 100,   }}  className={`  ${transparent ? 'bg-white ' : 'bg-transparent'}   ${transparent && 'fixed shadow-lg '}   w-[100%] `}>
                   
                   
                   <div className={`flex items-center justify-between px-7 md:max-lg:px-4 ${!transparent && 'homeOne'} h-28 w-[100%]  text-bold  ${transparent ? 'text-black' :'text-white'} `}>
