@@ -21,6 +21,10 @@ import InstallMobileOutlinedIcon from '@mui/icons-material/InstallMobileOutlined
 import PivotTableChartOutlinedIcon from '@mui/icons-material/PivotTableChartOutlined';
 import LocalConvenienceStoreOutlinedIcon from '@mui/icons-material/LocalConvenienceStoreOutlined';
 import CellTowerOutlinedIcon from '@mui/icons-material/CellTowerOutlined';
+import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
+import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
+import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
+import { IconButton } from '@mui/material';
 
 function Home() {
   const [isHover1,setIsHoverd1]=useState(false)
@@ -33,6 +37,15 @@ function Home() {
   const [isHover7,setIsHoverd7]=useState(false)
   const [isHover8,setIsHoverd8]=useState(false)
 
+  const [commentt,setCommentt]=useState(1)
+
+   const handleLeft=()=>{
+         if (commentt >1){setCommentt((e)=>e-1)} 
+                 
+   }
+   const handleRight=()=>{
+    if(commentt <3){setCommentt((e)=>e+1)}
+   }
 
     const CardOne=(props)=>{
       return(
@@ -64,6 +77,22 @@ function Home() {
       </a>
     )
       }
+
+    const CardThree=(props)=>{
+      return(
+        <div className=' flex flex-col gap-1 bg-[#FFEFF0] w-[400px] max-xs:w-[350px] md:max-mdd:w-[360px] h-60 px-7 py-4 rounded-md'>
+             <div className='flex gap-1'>
+              {Array.isArray(props.el) && props.el.map((ele,index)=> (<StarOutlinedIcon key={index} sx={{color:'#F69F37'}}/> ))}
+            </div>
+            <p className=' text-gray-700   pb-4 font-semibold'>
+              {`"${props.comment} " `}
+            </p>
+            <span className='font-bold text-lg text-gray-700'>{props.name}</span>
+            <span className='font-semibold text-gray-700'>{props.job}</span>
+        </div>
+      )
+    }
+
 
   return (
     <div className='h-[2000px] flex flex-col '>
@@ -108,15 +137,28 @@ function Home() {
         <div className='mt-40 grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:flex justify-between  py-2'>
             <img src={p1} className='w-[400px] max-xs:w-[350px] md:max-lg:w-[350px] lg:max-xl:w-[320px] h-[470px] pt-14'/>
             <div className=' flex flex-col w-[550px] max-xs:w-[350px] md:max-lg:w-[400px] lg:max-xl:w-[400px] max-sm:px-2'>
-              <p className='text-xl text-[#1F788C] font-bold'>about Abacus</p>
+              <p className='text-xl text-[#1F788C] font-bold underline'>about Abacus</p>
               <h1 className='text-[38px] max-sm:text-[20px]   font-bold'>Empowering  learner for a Brigheter Future</h1>
               <p className='text-xl max-sm:text-lg'>
               Lorem ipsum is a placeholder text commonly
                used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.
               </p>
-               <div className='flex'></div>
-               <a href='/' className='bg-[#1F788C] text-white w-48 text-xl py-1.5 px-1 mt-5 text-center max-md:mb-3 '>more about Abacus </a>
+               {/* <div className='flex gap-14  py-3'> 
+                  <div className='flex flex-col text-[#1F788C]'>
+                    <span className='text-[50px] font-bold'>11+ </span>
+                    <span className='text-gray-600'>Years of experience</span>
+                  </div>
+                  <div className='w-[1px] bg-black'></div>
+                  <div className='flex flex-col pt-3 text-[#1F788C]'>
+                    <span className='text-[50px] font-bold'>1200+ </span>
+                    <span className='text-gray-600'>Happy Students</span>
+                  </div>
+                  
+
+               </div> */}
+               <a href='/' className='bg-[#1F788C] text-white w-48 text-xl py-2 px-1 mt-5 text-center max-md:mb-3 '>more about Abacus </a>
             </div>
+
              <div className=''>
                <img src={p1} className='w-[250px] h-[330px] rounded-md '/>
                <img src={p2} className='w-[250px] lg:max-xl:w-[230px] lg:max-xl:right-4 h-[330px] bottom-48 right-20 relative rounded-md'/>
@@ -154,7 +196,76 @@ function Home() {
         </div>
 
     
-    
+         {/* section four */}
+         <div className='flex flex-col items-center mt-28 pb-28 '> 
+          <p className=' underline text-2xl text-[#1F788C] '>student review</p>
+          <h1 className='text-[40px] font-bold text-center text-gray-800  w-[600px] max-xs:w-[350px] xs:max-sm:w-[500px] xs:max-sm:text-[32px] max-sm:text-[30px]'>2000+ students say about our courses and instructor</h1>
+         
+         <div>
+            {
+             commentt===1 && 
+             <div className='flex gap-5 justify-center  max-md:flex-col'>
+               <CardThree  
+                el={[1,1,1,1,1]} 
+                comment='In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the 
+                visual form of a document or a typeface. '
+                name='Mihiret Desalegn'
+                job='web designer'
+               />
+               <CardThree  
+                el={[1,1,1]} 
+                comment='In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the 
+                visual form of a document or a typeface. '
+                name='John  smith'
+                job='mobile developer'
+                />
+              </div>
+            }
+            {
+             commentt===2 && 
+             <div className='flex gap-5 justify-center max-md:flex-col'>
+               <CardThree  
+                el={[1,1,1,1,1]} 
+                comment='Lorem ipsum is a placeholder text commonly used to demonstrate the 
+                 visual form of a document or a typeface. In publishing and graphic design,. '
+                name='Medhanit asmare'
+                job='graphics designer'
+               />
+               <CardThree  
+                el={[1,1,1]} 
+                comment='Lorem ipsum is a placeholder text commonly used to demonstrate the 
+                 visual form of a document or a typeface. In publishing and graphic design, . '
+                name='kaleb fantahun'
+                job='vidio editer'
+                />
+              </div>
+            }{
+              commentt===3 && 
+              <div className='flex gap-5 justify-center max-md:flex-col'>
+                <CardThree  
+                 el={[1,1,1,1,1]} 
+                 comment='In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the 
+                 visual form of a document or a typeface. '
+                 name='Mihiret Desalegn'
+                 job='web designer'
+                />
+                <CardThree  
+                 el={[1,1,1]} 
+                 comment='In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the 
+                 visual form of a document or a typeface. '
+                 name='John  smith'
+                 job='mobile developer'
+                 />
+               </div>
+             }
+         </div>
+         <div className='flex pt-3'>
+           <button onClick={handleLeft}><KeyboardArrowLeftOutlinedIcon sx={{fontSize:'40px' ,color:'#F69F37'}}/></button> 
+           <button onClick={handleRight}>   <KeyboardArrowRightOutlinedIcon sx={{fontSize:'40px' , color:'#F69F37'}} /></button> 
+
+         </div>
+
+         </div>
     
     </div>
   
