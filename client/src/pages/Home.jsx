@@ -13,6 +13,11 @@ import person1 from '../assets/person1.jpg'
 import person2 from '../assets/person2.jpg'
 
 
+import p3 from '../assets/p3.jpg'
+import p4 from '../assets/p4.jpg'
+import p5 from '../assets/p5.jpg'
+
+
 import VideoSettingsOutlinedIcon from '@mui/icons-material/VideoSettingsOutlined';
 import CodeOffOutlinedIcon from '@mui/icons-material/CodeOffOutlined';
 import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
@@ -25,12 +30,24 @@ import CellTowerOutlinedIcon from '@mui/icons-material/CellTowerOutlined';
 import StarOutlinedIcon from '@mui/icons-material/StarOutlined';
 import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeftOutlined';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
-import { IconButton } from '@mui/material';
+import { IconButton, Typography } from '@mui/material';
 
 import LocalLibraryOutlinedIcon from '@mui/icons-material/LocalLibraryOutlined';
 import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
 import BadgeOutlinedIcon from '@mui/icons-material/BadgeOutlined';
 import TravelExploreOutlinedIcon from '@mui/icons-material/TravelExploreOutlined';
+
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
+
+import Accordion from '@mui/material/Accordion';
+import AccordionActions from '@mui/material/AccordionActions';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Button from '@mui/material/Button';
+import Footer from '../components/Footer';
+
 
 function Home() {
   const [isHover1,setIsHoverd1]=useState(false)
@@ -43,7 +60,17 @@ function Home() {
   const [isHover7,setIsHoverd7]=useState(false)
   const [isHover8,setIsHoverd8]=useState(false)
 
+  const [expanded, setExpanded] = useState(false); // State to track expanded accordion
+ const handleChange = (panel) => (event, isExpanded) => {
+    // Toggle the accordion state
+    setExpanded(isExpanded ? panel : false);
+  };
   const [commentt,setCommentt]=useState(1)
+  const [ch1,setCh1]=useState(false)
+
+  const handleChange1=()=>{
+    setCh1((e)=>!e)
+  }
 
    const handleLeft=()=>{
          if (commentt >1){setCommentt((e)=>e-1)} 
@@ -317,6 +344,155 @@ function Home() {
            </div>
          </div>
 
+
+         {/* section six  */}
+      <div className='flex justify-center gap-10 pt-20'>
+        <div className='flex justify-center items-center gap-x-2 gap-y-2 h-[450px]'>
+            <img src={p4} className='w-80 h-[350px]'/>
+            <div className='flex flex-col gap-2'>
+              <img src={p3} className='w-56 h-44'/>
+              <img src={p5} className='w-60 h-56'/>
+
+            </div>
+        </div>
+        <div className='w-[700px] flex flex-col gap-y-2'>
+          <p className='text-xl underline text-[#1F788C]'>Question & Answer</p>
+          <p className='text-[40px] font-bold text-gray-700'>Asked Question</p>
+          {/* <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+            <AccordionSummary onClick={handleChange1} expandIcon={<ExpandMoreIcon />} >
+              <p className=''>{expanded !== 'panel1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Accordion 1</p>
+            </AccordionSummary>
+           <AccordionDetails>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+         </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary onClick={handleChange1} expandIcon={<ExpandMoreIcon />} >
+              <p className=''> {!ch1 ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Accordion 1</p>
+            </AccordionSummary>
+           <AccordionDetails>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+         </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary onClick={handleChange1} expandIcon={<ExpandMoreIcon />} >
+              <p className=''> {!ch1 ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Accordion 1</p>
+            </AccordionSummary>
+           <AccordionDetails>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+         </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary onClick={handleChange1} expandIcon={<ExpandMoreIcon />} >
+              <p className=''> {!ch1 ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Accordion 1</p>
+            </AccordionSummary>
+           <AccordionDetails>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+         </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary onClick={handleChange1} expandIcon={<ExpandMoreIcon />} >
+              <p className=''> {!ch1 ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Accordion 1</p>
+            </AccordionSummary>
+           <AccordionDetails>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+         </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary onClick={handleChange1} expandIcon={<ExpandMoreIcon />} >
+              <p className=''> {!ch1 ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Accordion 1</p>
+            </AccordionSummary>
+           <AccordionDetails>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+         </AccordionDetails>
+          </Accordion> */}
+          <div className='  flex flex-col'>
+          <Accordion sx={{ backgroundColor:expanded == 'panel1' && '#F4F9FF', }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+        <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
+          <Typography>{expanded !== 'panel1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #1</Typography>
+        </AccordionSummary>
+        <AccordionDetails >
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion sx={{ backgroundColor:expanded == 'panel2' && '#F4F9FF', }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header"  expandIcon={<ExpandMoreIcon />}>
+          <Typography> {expanded !== 'panel2' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #2</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion sx={{ backgroundColor:expanded == 'panel3' && '#F4F9FF', }} expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header"  expandIcon={<ExpandMoreIcon />}>
+          <Typography> {expanded !== 'panel3' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #3</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. 
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion  sx={{ backgroundColor:expanded == 'panel4' && '#F4F9FF', }} expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+        <AccordionSummary aria-controls="panel4d-content" id="panel4d-header"  expandIcon={<ExpandMoreIcon />}>
+          <Typography>{expanded !== 'panel4' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #4</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. 
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion sx={{ backgroundColor:expanded == 'panel5' && '#F4F9FF', }} expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
+        <AccordionSummary aria-controls="panel5d-content" id="panel5d-header"  expandIcon={<ExpandMoreIcon />}>
+          <Typography>{expanded !== 'panel5' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #5</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. 
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion sx={{ backgroundColor:expanded == 'panel6' && '#F4F9FF', }} expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
+        <AccordionSummary aria-controls="panel6d-content" id="panel6d-header"  expandIcon={<ExpandMoreIcon />}>
+          <Typography>{expanded !== 'panel6' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #6</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. 
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      </div>
+        </div>
+
+     </div>
+
+
+      {/* footer */}
+      <Footer />
 
     </div>
   
