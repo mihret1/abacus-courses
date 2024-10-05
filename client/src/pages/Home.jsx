@@ -48,6 +48,12 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Button from '@mui/material/Button';
 import Footer from '../components/Footer';
 
+import ComputerIcon from '@mui/icons-material/Computer';
+// import SchoolIcon from '@mui/icons-material/School';
+// import VerifiedIcon from '@mui/icons-material/Verified';
+import SupportAgentIcon from '@mui/icons-material/SupportAgent';
+import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
+
 
 function Home() {
   const [isHover1,setIsHoverd1]=useState(false)
@@ -96,7 +102,7 @@ function Home() {
       onMouseLeave={()=>(setHoverr(false))}>
       <div 
      
-      className={`flex flex-col h-40 w-44 pl-4 py-5 gap-5   hover:text-white ${className} `}
+      className={`flex flex-col w-44  pl-4 py-5 gap-5   hover:text-white ${className} `}
       style={style}
       // style={{ ...style, padding: '1rem', backgroundColor: 'lightblue' }}
       >
@@ -135,6 +141,15 @@ function Home() {
         </div>
       )
     }
+
+    const CardFive=({iconn,title,className})=>{
+      return(
+      <div className={`w-52 md:max-lg:w-44 h-48 border-[1.5px]   flex flex-col justify-center items-center ${className}`}>
+          {iconn}
+          <p className='text-xl font-semibold'>{title}</p>
+      </div>
+    )
+        }
 
 
   return (
@@ -178,8 +193,8 @@ function Home() {
 
             {/* section two */}
         <div className='mt-40 grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:flex justify-between  py-2'>
-            <img src={p1} className='w-[400px] max-xs:w-[350px] md:max-lg:w-[350px] lg:max-xl:w-[320px] h-[470px] '/>
-            <div className=' flex flex-col w-[550px] max-xs:w-[350px] md:max-lg:w-[400px] lg:max-xl:w-[400px] max-sm:px-2'>
+            <img src={p1} className='w-[400px] max-xs:w-[340px] md:max-lg:w-[350px] lg:max-xl:w-[320px] h-[470px] '/>
+            <div className=' flex flex-col w-[550px] xs:max-sm:w-[430px] max-xs:w-[340px] md:max-lg:w-[400px] lg:max-xl:w-[400px] max-sm:px-2'>
               <p className='text-xl text-[#1F788C] font-bold underline'>about Abacus</p>
               <h1 className='text-[38px] max-sm:text-[20px]   font-bold'>Empowering  learner for a Brigheter Future</h1>
               <p className='text-xl max-sm:text-lg'>
@@ -238,11 +253,35 @@ function Home() {
                 <p className='text-white text-xl py-4'>Find your best online course? <span className='text-yellow-600 font-bold'> <a href='/'>Get Started</a></span> </p>
         </div>
 
+
+
+
+        {/* section three two */}
+
+        <div className='flex max-md:flex-col  items-center justify-center px-4 pt-40 pb-16  mdd:gap-5 ' >
+          <div className='flex flex-col h-[350px] gap-6 max-sm:gap-3 xs:max-sm:w-[70%] sm:max-md:w-[80%] md:w-[50%] '>
+               <p className='text-2xl font-semibold text-[#1F788C]'>What we Offer</p>
+               <h1 className='text-3xl font-bold'>We Organize Effective Learning</h1>
+               <p className='text-gray-700 text-lg'>
+                we`ll help to plan and manage your studying process. our sucess being with you with 
+                every step of the way from singing up for the course to recieving the degree.
+               </p>
+               <a href='/' className='px-4 py-2 rounded-full w-36 bg-[#1F788C] text-white font-semibold'>About Us</a>
+          </div>
+          <div className=' grid max-xs:grid-cols-1 grid-cols-2 gap-2  place-items-end'>
+            <CardFive className=' ' iconn={<ComputerIcon sx={{ fontSize:'44px',color:'#1F788C' }}/>} title='Online course'/>
+            <CardFive className=' md:bottom-7 relative'  iconn={<WorkspacePremiumIcon sx={{ fontSize:'44px',color:'#1F788C' }}/>} title='Personal Teacher'/>
+            <CardFive className=''  iconn={<SchoolIcon sx={{ fontSize:'44px',color:'#1F788C' }}/>} title='Powerfull Program'/>
+            <CardFive className=' md:bottom-7 relative'  iconn={<SupportAgentIcon sx={{ fontSize:'44px',color:'#1F788C' }}/>} title='24/7 Support'/>
+
+          </div>
+        </div>
+
     
          {/* section four */}
          <div className='flex flex-col items-center mt-28 pb-28 '> 
           <p className=' underline text-2xl text-[#1F788C] '>student review</p>
-          <h1 className='text-[40px] font-bold text-center text-gray-800  w-[600px] max-xs:w-[350px] xs:max-sm:w-[500px] xs:max-sm:text-[32px] max-sm:text-[30px]'>2000+ students say about our courses and instructor</h1>
+          <h1 className='text-[40px] font-bold text-center text-gray-800  w-[600px] max-xs:w-[345px] xs:max-sm:w-[90%] xs:max-sm:text-[28px] max-sm:text-[30px]'>2000+ students say about our courses and instructor</h1>
          
          <div>
             {
@@ -346,73 +385,18 @@ function Home() {
 
 
          {/* section six  */}
-      <div className='flex justify-center gap-10 pt-20'>
-        <div className='flex justify-center items-center gap-x-2 gap-y-2 h-[450px]'>
+      <div className='flex max-md:flex-col justify-center gap-10 pt-16 px-2 '>
+        <div className='flex  justify-center items-center gap-x-2 gap-y-2 h-[450px] '>
             <img src={p4} className='w-80 h-[350px]'/>
-            <div className='flex flex-col gap-2'>
+            <div className='flex flex-col gap-2  max-sm:hidden md:max-xl:hidden'>
               <img src={p3} className='w-56 h-44'/>
               <img src={p5} className='w-60 h-56'/>
-
             </div>
         </div>
-        <div className='w-[700px] flex flex-col gap-y-2'>
+        <div className='w-[700px] max-xs:w-[340px] xs:max-md:w-[90%]    flex flex-col gap-y-2 '>
           <p className='text-xl underline text-[#1F788C]'>Question & Answer</p>
-          <p className='text-[40px] font-bold text-gray-700'>Asked Question</p>
-          {/* <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-            <AccordionSummary onClick={handleChange1} expandIcon={<ExpandMoreIcon />} >
-              <p className=''>{expanded !== 'panel1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Accordion 1</p>
-            </AccordionSummary>
-           <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-         </AccordionDetails>
-          </Accordion>
-          <Accordion>
-            <AccordionSummary onClick={handleChange1} expandIcon={<ExpandMoreIcon />} >
-              <p className=''> {!ch1 ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Accordion 1</p>
-            </AccordionSummary>
-           <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-         </AccordionDetails>
-          </Accordion>
-          <Accordion>
-            <AccordionSummary onClick={handleChange1} expandIcon={<ExpandMoreIcon />} >
-              <p className=''> {!ch1 ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Accordion 1</p>
-            </AccordionSummary>
-           <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-         </AccordionDetails>
-          </Accordion>
-          <Accordion>
-            <AccordionSummary onClick={handleChange1} expandIcon={<ExpandMoreIcon />} >
-              <p className=''> {!ch1 ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Accordion 1</p>
-            </AccordionSummary>
-           <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-         </AccordionDetails>
-          </Accordion>
-          <Accordion>
-            <AccordionSummary onClick={handleChange1} expandIcon={<ExpandMoreIcon />} >
-              <p className=''> {!ch1 ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Accordion 1</p>
-            </AccordionSummary>
-           <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-         </AccordionDetails>
-          </Accordion>
-          <Accordion>
-            <AccordionSummary onClick={handleChange1} expandIcon={<ExpandMoreIcon />} >
-              <p className=''> {!ch1 ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Accordion 1</p>
-            </AccordionSummary>
-           <AccordionDetails>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-         </AccordionDetails>
-          </Accordion> */}
-          <div className='  flex flex-col'>
+          <p className='text-[40px] max-sm:text-2xl font-bold text-gray-700'>Asked Question</p>
+          <div className='  flex flex-col '>
           <Accordion sx={{ backgroundColor:expanded == 'panel1' && '#F4F9FF', }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
           <Typography>{expanded !== 'panel1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #1</Typography>
