@@ -70,10 +70,10 @@ const Navbar=()=>{
                                 </Select>
                             </FormControl>
                             <a href='/register' className="hover:text-yellow-500">   <span>Register</span></a> 
-                            <a href='/' className="hover:text-yellow-500">   <span>About us</span></a> 
-                            <a href='/' className="hover:text-yellow-500">   <span>Why Us</span></a> 
-                            <a href='/' className="hover:text-yellow-500">   <span>Faq</span></a> 
-                            <a href='/' className="hover:text-yellow-500">   <span>Contact</span></a> 
+                            <a href='#aboutus' className="hover:text-yellow-500">   <span>About us</span></a> 
+                            <a href='#whyus' className="hover:text-yellow-500">   <span>Why Us</span></a> 
+                            <a href='#faq' className="hover:text-yellow-500">   <span>Faq</span></a> 
+                            <a href='#contact' className="hover:text-yellow-500">   <span>Contact</span></a> 
                             <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 py-[1px] text-white"><a href='/'>SignUp</a> </button>
 
                           </nav>

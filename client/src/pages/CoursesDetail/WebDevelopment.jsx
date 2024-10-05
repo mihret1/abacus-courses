@@ -10,6 +10,7 @@ import Person3OutlinedIcon from '@mui/icons-material/Person3Outlined';
 import GTranslateRoundedIcon from '@mui/icons-material/GTranslateRounded';
 import SignalCellularAltOutlinedIcon from '@mui/icons-material/SignalCellularAltOutlined';
 import CardMembershipOutlinedIcon from '@mui/icons-material/CardMembershipOutlined';
+import Footer from '../../components/Footer';
 
 
 function WebDevelopment() {
@@ -20,7 +21,7 @@ function WebDevelopment() {
             <span className='text-white text-2xl  flex  justify-center pt-10'>web development course</span>
         </div>
 
-        <div className='flex max-mdd:flex-col pt-10 px-5'>
+        <div className='flex max-mdd:flex-col pt-10 px-5 pb-28'>
 
             <div className='w-[60%] max-mdd:w-[95%]'>
                 <div className='flex flex-col gap-2'>
@@ -115,6 +116,8 @@ function WebDevelopment() {
                </div>
             </div>
         </div>
+
+        <Footer />
     </div>
   )
 }

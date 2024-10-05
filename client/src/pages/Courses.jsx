@@ -12,6 +12,7 @@ import img1 from '../assets/co3.jpg'
 import img2 from '../assets/co4.jpg'
 import img3 from '../assets/co5.jpg'
 import img4 from '../assets/co6.jpg'
+import Footer from '../components/Footer'
 
 
 
@@ -41,7 +42,7 @@ function Courses() {
             <span className='text-white text-2xl  flex  justify-center pt-20'>See all the Courses</span>
         </div>
         
-        <div className='grid grid-cols-2 place-items-center  gap-y-10 gap-x-5 max-md:grid-cols-1 justify-center items-center'>
+        <div className='pb-28 grid grid-cols-2 place-items-center  gap-y-10 gap-x-5 max-md:grid-cols-1 justify-center items-center'>
             <CardOne 
             path='/'
             imgg={img1}
@@ -78,7 +79,7 @@ function Courses() {
             
         </div>
 
-        
+        <Footer />
     </div>
   )
 }

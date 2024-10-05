@@ -158,7 +158,7 @@ function Home() {
   return (
     <div className='h-[2000px] flex flex-col '>
              {/* section one */}
-        <div className=''   style={{backgroundImage:`url(${p2})`,backgroundRepeat:'no-repeat',backgroundSize:'cover' }}>
+        <div  className=''   style={{backgroundImage:`url(${p2})`,backgroundRepeat:'no-repeat',backgroundSize:'cover' }}>
            <Navbar />
            <div className='homeOne flex flex-col gap-20 max-sm:gap-10 pb-24 h-[100%] w-[100%] text-white text-bold pt-12 max-sm:pt-6'>
               
@@ -195,7 +195,7 @@ function Home() {
             
 
             {/* section two */}
-        <div className='mt-40 grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:flex justify-between  py-2'>
+        <div id="aboutus" className='mt-40 grid max-md:grid-cols-1 md:max-lg:grid-cols-2 lg:flex justify-between  py-2'>
             <img src={p1} className='w-[400px] max-xs:w-[340px] md:max-lg:w-[350px] lg:max-xl:w-[320px] h-[470px] '/>
             <div className=' flex flex-col w-[550px] xs:max-sm:w-[430px] max-xs:w-[340px] md:max-lg:w-[400px] lg:max-xl:w-[400px] max-sm:px-2'>
               <p className='text-xl text-[#1F788C] font-bold underline'>about Abacus</p>
@@ -258,7 +258,7 @@ function Home() {
         </div> */}
          
            {/* section three */}
-        <div className='bg-[#0B1546] py-16 flex flex-col items-center gap-3'>
+        <div id="aboutus" className='bg-[#0B1546] py-16 flex flex-col items-center gap-3'>
                 <p1 className='text-white text-xl'> Courses Category</p1>
                 <h1 className='text-white text-3xl font-semibold'>Explore Course Category</h1>
 
@@ -290,7 +290,7 @@ function Home() {
 
         {/* section three two */}
 
-        <div className='flex max-md:flex-col  items-center justify-center px-4 pt-40 pb-16  mdd:gap-5 ' >
+        <div id="aboutus" className='flex max-md:flex-col  items-center justify-center px-4 pt-40 pb-16  mdd:gap-5 ' >
           <div className='flex flex-col h-[350px] gap-6 max-sm:gap-3 xs:max-sm:w-[70%] sm:max-md:w-[80%] md:w-[50%] '>
                <p className='text-2xl font-semibold text-[#1F788C]'>What we Offer</p>
                <h1 className='text-3xl font-bold'>We Organize Effective Learning</h1>
@@ -384,7 +384,7 @@ function Home() {
 
 
          {/* section five */}
-         <div className='bg-[#0B1546] flex flex-col gap-3 py-16 items-center text-white'>
+         <div id="whyus" className='bg-[#0B1546] flex flex-col gap-3 py-16 items-center text-white'>
           {/* <img src={person2}/> */}
            <h1 className='text-3xl text-center'>Why Learn with Our Courses</h1>
            <p className='text-lg'>benefit of  learning with us </p>
@@ -417,7 +417,7 @@ function Home() {
 
 
          {/* section six  */}
-      <div className='flex max-md:flex-col justify-center gap-10 pt-16 px-2 '>
+      <div id="faq" className='flex max-md:flex-col justify-center gap-10 pt-16 px-2 '>
         <div className='flex  justify-center items-center gap-x-2 gap-y-2 h-[450px] '>
             <img src={p4} className='w-80 h-[350px]'/>
             <div className='flex flex-col gap-2  max-sm:hidden md:max-xl:hidden'>

@@ -10,7 +10,7 @@ import p1 from '../assets/p1.jpg'
 import { Stack, Typography } from '@mui/material';
 function Footer() {
   return (
-    <div>
+    <div id="contact">
     <div className='gap-8 py-10 bg-[#0B1546] h-96 text-white flex flex-col justify-center items-center'>
         <h1 className='text-2xl font-bold'>Abacus Course</h1>
         <div className='flex gap-2 text-white'>

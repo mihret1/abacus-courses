@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar'
 import img1 from './../assets/pr3.jpg'
 
 import FileBase from 'react-file-base64';
+import Footer from '../components/Footer';
 
 
 
@@ -19,7 +20,7 @@ function Register() {
     const handleRegistration=()=>{}
 
   return (
-    <div className='h-[1000px]'>
+    <div className=''>
         <div className=' h-[270px] bg-[#0B1546]'>
             <Navbar />
             <span className='text-white text-2xl  flex  justify-center pt-20'>Register your Courses</span>
@@ -29,7 +30,7 @@ function Register() {
          <p className='font-semibold pb-5'>Acc no. 1000476782492</p> 
 
         </div>
-        <div className='flex gap-5  max-mdd:flex-col  justify-center items-center '>
+        <div className=' pb-28 flex gap-5  max-mdd:flex-col  justify-center items-center '>
              
              <img src={img1} className='max-mdd:w-[90%] mdd:max-lg:w-[350px] lg:max-xl:w-[500px] xl:w-[550px] max-xs:h-[250px] xs:max-sm:h-[350px]  sm:max-mdd:h-[420px] mdd:h-[520px]'/>
              <form onSubmit={handleRegistration} className='flex flex-col gap-2 max-mdd:w-[90%]  w-[550px] max-md:justify-center px-5 '>
@@ -88,6 +89,8 @@ function Register() {
 
              </form>
         </div>
+
+        <Footer />
     </div>
   )
 }
