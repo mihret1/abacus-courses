@@ -74,7 +74,7 @@ const Navbar=()=>{
                             <a href='/' className="hover:text-[#1F788C]">   <span>Why Us</span></a> 
                             <a href='/' className="hover:text-[#1F788C]">   <span>Faq</span></a> 
                             <a href='/' className="hover:text-[#1F788C]">   <span>Contact</span></a> 
-                            <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 text-white"><a href='/'>SignUp</a> </button>
+                            <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 py-[1px] text-white"><a href='/'>SignUp</a> </button>
 
                           </nav>
 

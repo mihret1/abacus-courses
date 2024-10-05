@@ -163,12 +163,12 @@ function Home() {
            <div className='homeOne flex flex-col gap-20 max-sm:gap-10 pb-24 h-[100%] w-[100%] text-white text-bold pt-12 max-sm:pt-6'>
               
               <div className='flex flex-col items-center justify-center max-sm:px-3 '>
-                <p className='text-[#DCB128] underline text-[21px]'>welcome to Abacus Course  </p>
+                <p className='text-[#e1ba3a] underline text-[21px]'>welcome to Abacus Course  </p>
                 <h1 className='text-[45px] max-sm:text-[25px] font-bold   text-center md:max-lg:w-2/3 lg:w-1/2 '>
                   Interactive Learning Engaging Students in the Digital Age
                 </h1>
                 <p className='text-xl  text-center max-sm:text-lg'> Get 1500+ courses Best Quality online Courses from Abacus </p>
-                <button className='bg-[#DCB128] px-3 py-1.5 rounded-md my-5'><a href='/'>Find Your Best Course</a></button>
+                <button className='bg-yellow-500 hover:bg-gradient-to-r  hover:from-[#e9bf37] hover:to-[#ddd35d]   px-3 py-1.5 rounded-md my-5'><a href='/'>Find Your Best Course</a></button>
               </div>
 
               <div className='grid gap-2 max-xs:grid-cols-1 xs:max-sm:grid-cols-2 sm:max-lg:grid-cols-3 lg:grid-cols-5  justify-between'>
@@ -217,7 +217,7 @@ function Home() {
                   
 
                </div>
-               <a href='/' className='bg-[#1F788C] text-white w-48 text-xl py-2 px-1 mt-5 text-center max-md:mb-3 '>more about Abacus </a>
+               <a href='/' className='bg-[#1F788C] hover:bg-[#5badbf] text-white w-48 text-xl py-2 px-1 mt-5 text-center max-md:mb-3 '>more about Abacus </a>
             </div>
 
              <div className=''>
@@ -282,7 +282,7 @@ function Home() {
                   </div>          
         
                 </div>
-                <p className='text-white text-xl py-4'>Find your best online course? <span className='text-yellow-600 font-bold'> <a href='/'>Get Started</a></span> </p>
+                <p className='text-white text-xl py-4' >Find your best online course? <span className='text-yellow-600 font-bold hover:text-yellow-300'> <a href='/'>Get Started</a></span> </p>
         </div> 
 
 
@@ -298,7 +298,7 @@ function Home() {
                 we`ll help to plan and manage your studying process. our sucess being with you with 
                 every step of the way from singing up for the course to recieving the degree.
                </p>
-               <a href='/' className='px-4 py-2 rounded-full w-36 bg-[#1F788C] text-white font-semibold'>About Us</a>
+               <a href='/' className='px-4 py-2 rounded-full w-36 bg-[#1F788C] hover:bg-[#47b8d2]  text-white font-semibold'>About Us</a>
           </div>
           <div className=' grid max-xs:grid-cols-1 grid-cols-2 gap-2  place-items-end'>
             <CardFive className=' ' iconn={<ComputerIcon sx={{ fontSize:'44px',color:'#1F788C' }}/>} title='Online course'/>
@@ -431,7 +431,7 @@ function Home() {
           <div className='  flex flex-col '>
           <Accordion sx={{ backgroundColor:expanded == 'panel1' && '#F4F9FF', }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography>{expanded !== 'panel1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #1</Typography>
+          <Typography>{expanded !== 'panel1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}What courses are given by Abacus</Typography>
         </AccordionSummary>
         <AccordionDetails >
           <Typography>
@@ -443,7 +443,7 @@ function Home() {
       </Accordion>
       <Accordion sx={{ backgroundColor:expanded == 'panel2' && '#F4F9FF', }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography> {expanded !== 'panel2' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #2</Typography>
+          <Typography> {expanded !== 'panel2' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}How I can Apply for courses</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -455,7 +455,7 @@ function Home() {
       </Accordion>
       <Accordion sx={{ backgroundColor:expanded == 'panel3' && '#F4F9FF', }} expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography> {expanded !== 'panel3' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #3</Typography>
+          <Typography> {expanded !== 'panel3' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} The price of the courses</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -467,7 +467,7 @@ function Home() {
       </Accordion>
       <Accordion  sx={{ backgroundColor:expanded == 'panel4' && '#F4F9FF', }} expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
         <AccordionSummary aria-controls="panel4d-content" id="panel4d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography>{expanded !== 'panel4' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #4</Typography>
+          <Typography>{expanded !== 'panel4' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Is there both online and inperson course</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -479,7 +479,7 @@ function Home() {
       </Accordion>
       <Accordion sx={{ backgroundColor:expanded == 'panel5' && '#F4F9FF', }} expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
         <AccordionSummary aria-controls="panel5d-content" id="panel5d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography>{expanded !== 'panel5' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #5</Typography>
+          <Typography>{expanded !== 'panel5' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Who Can apply for the courses</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -491,7 +491,7 @@ function Home() {
       </Accordion>
       <Accordion sx={{ backgroundColor:expanded == 'panel6' && '#F4F9FF', }} expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
         <AccordionSummary aria-controls="panel6d-content" id="panel6d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography>{expanded !== 'panel6' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Collapsible Group Item #6</Typography>
+          <Typography>{expanded !== 'panel6' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Is there discounts ?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

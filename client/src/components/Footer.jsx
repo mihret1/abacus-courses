@@ -29,7 +29,7 @@ function Footer() {
              <a href='/' className="hover:text-[#1F788C]">   <span>About us</span></a> 
              
         </div>
-        <a href='/' className='bg-white text-lg font-semibold rounded-md text-black px-3 py-2'>Register Course</a>
+        <a href='/' className='bg-white text-lg  hover:bg-[#7fcddf]  font-semibold rounded-md text-black px-3 py-2'>Register Course</a>
       
     </div>
     <Stack direction={{ sm:'row' }} paddingY={1.4} paddingX={5} color='white' spacing={5} width='100%' alignItems='center' justifyContent='space-between' bgcolor='black'>
