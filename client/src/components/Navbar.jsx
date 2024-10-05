@@ -69,7 +69,7 @@ const Navbar=()=>{
 
                                 </Select>
                             </FormControl>
-                            <a href='/' className="hover:text-[#1F788C]">   <span>Register</span></a> 
+                            <a href='/register' className="hover:text-[#1F788C]">   <span>Register</span></a> 
                             <a href='/' className="hover:text-[#1F788C]">   <span>About us</span></a> 
                             <a href='/' className="hover:text-[#1F788C]">   <span>Why Us</span></a> 
                             <a href='/' className="hover:text-[#1F788C]">   <span>Faq</span></a> 
