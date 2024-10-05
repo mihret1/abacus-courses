@@ -35,12 +35,12 @@ const Navbar=()=>{
                   
                   <div className={`flex items-center justify-between px-7 md:max-lg:px-4 ${!transparent && 'homeOne'} h-28 w-[100%]  text-bold  ${transparent ? 'text-black' :'text-white'} `}>
 
-                         <a href="/"> <div className="flex gap-2 items-center">  <img src={p1}  className="w-14 h-14 rounded-full"/> <span className="text-[23px] md:max-lg:text-[19px] font-bold ">Abacus Courses</span> </div></a>
+                         <a href="/"> <div className="flex gap-2 items-center">  <img src={p1}  className="w-14 h-14 rounded-full"/> <span className={`text-[24px] md:max-lg:text-[19px] font-bold  `}>Abacus Courses</span> </div></a>
                          
                           <nav className=" hidden md:flex gap-4 text-[21px] md:max-lg:text-[18px]  md:max-lg:gap-2 items-center ">
                         
                             
-                            <FormControl sx={{ width:100,'&:hover .MuiInputLabel-root': {color: '#1F788C' },}}>
+                            <FormControl sx={{ width:100,'&:hover .MuiInputLabel-root': {color: 'yellow' },}}>
                               <InputLabel sx={{color: transparent ? 'black' : 'white', fontSize:'20px', }}  >Course</InputLabel>
                                 <Select 
                                  sx={{ color:transparent ? 'white' :'black', width:120, 
@@ -60,20 +60,20 @@ const Navbar=()=>{
                                 label="Age"
                                 
                                 >
-                                <MenuItem ><a href="/">web development</a></MenuItem>
-                                <MenuItem><a href='/'>graphics design</a></MenuItem>
-                                <MenuItem> <a href="/">mobile development</a></MenuItem>
-                                <MenuItem> <a href="/">Digital marketing</a></MenuItem>
-                                <MenuItem> <a href="/">online working</a></MenuItem>
-                                <MenuItem> <a href="/">content creating</a></MenuItem>
+                                <MenuItem ><a href="/web">web development</a></MenuItem>
+                                <MenuItem><a href='/web'>graphics design</a></MenuItem>
+                                <MenuItem> <a href="/web">mobile development</a></MenuItem>
+                                <MenuItem> <a href="/web">Digital marketing</a></MenuItem>
+                                <MenuItem> <a href="/web">online working</a></MenuItem>
+                                <MenuItem> <a href="/web">content creating</a></MenuItem>
 
                                 </Select>
                             </FormControl>
-                            <a href='/register' className="hover:text-[#1F788C]">   <span>Register</span></a> 
-                            <a href='/' className="hover:text-[#1F788C]">   <span>About us</span></a> 
-                            <a href='/' className="hover:text-[#1F788C]">   <span>Why Us</span></a> 
-                            <a href='/' className="hover:text-[#1F788C]">   <span>Faq</span></a> 
-                            <a href='/' className="hover:text-[#1F788C]">   <span>Contact</span></a> 
+                            <a href='/register' className="hover:text-yellow-500">   <span>Register</span></a> 
+                            <a href='/' className="hover:text-yellow-500">   <span>About us</span></a> 
+                            <a href='/' className="hover:text-yellow-500">   <span>Why Us</span></a> 
+                            <a href='/' className="hover:text-yellow-500">   <span>Faq</span></a> 
+                            <a href='/' className="hover:text-yellow-500">   <span>Contact</span></a> 
                             <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 py-[1px] text-white"><a href='/'>SignUp</a> </button>
 
                           </nav>

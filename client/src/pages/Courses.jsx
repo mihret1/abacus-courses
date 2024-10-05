@@ -24,7 +24,7 @@ function Courses() {
                 <img  src={props.imgg} className='w-[95%] max-sm:h-[220px] sm:max-lg:h-[270px] lg:h-[310px]' />
                 <h1 className='text-2xl font-semibold'>{props.title}</h1>
                 <p className='text-lg'>{props.desc}</p>
-                 <a href='/' className='w-40 bg-blue-500 px-4 py-2 flex justify-center text-white text-lg'>read more</a>
+                 <a href={props.path} className='w-40 bg-blue-500 px-4 py-2 flex justify-center text-white text-lg'>read more</a>
 
                 
 
@@ -43,6 +43,7 @@ function Courses() {
         
         <div className='grid grid-cols-2 place-items-center  gap-y-10 gap-x-5 max-md:grid-cols-1 justify-center items-center'>
             <CardOne 
+            path='/'
             imgg={img1}
             title='Web development'
             desc=' Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
