@@ -98,11 +98,14 @@ function Home() {
    
       const CardTwo=({title,desc,iconn,style,className,classNameTwo,hoverr,setHoverr})=>{
        return(
-      <a href='/'  onMouseEnter={()=>(setHoverr(true))}
-      onMouseLeave={()=>(setHoverr(false))}>
+      <a href='/' 
+       onMouseEnter={()=>(setHoverr(true))}
+      onMouseLeave={()=>(setHoverr(false))}
+      className='hover:bg-yellow-200'
+      >
       <div 
      
-      className={`flex flex-col w-44  pl-4 py-5 gap-5   hover:text-white ${className} `}
+      className={`flex flex-col w-44  pl-4 py-5 gap-5    ${className} `}
       style={style}
       // style={{ ...style, padding: '1rem', backgroundColor: 'lightblue' }}
       >
@@ -144,7 +147,7 @@ function Home() {
 
     const CardFive=({iconn,title,className})=>{
       return(
-      <div className={`w-52 md:max-lg:w-44 h-48 border-[1.5px]   flex flex-col justify-center items-center ${className}`}>
+      <div className={`w-52 rounded-sm hover:bg-yellow-300 md:max-lg:w-44 h-48 border-[1.5px]   flex flex-col justify-center items-center ${className}`}>
           {iconn}
           <p className='text-xl font-semibold'>{title}</p>
       </div>
@@ -225,7 +228,8 @@ function Home() {
 
         </div>
 
-          {/* section three */}
+          {/* 
+          // section three
         <div className='bg-[#0B1546] py-16 flex flex-col items-center gap-3'>
                 <p1 className='text-white text-xl'> Courses Category</p1>
                 <h1 className='text-white text-3xl font-semibold'>Explore Course Category</h1>
@@ -251,7 +255,35 @@ function Home() {
         
                 </div>
                 <p className='text-white text-xl py-4'>Find your best online course? <span className='text-yellow-600 font-bold'> <a href='/'>Get Started</a></span> </p>
-        </div>
+        </div> */}
+         
+           {/* section three */}
+        <div className='bg-[#0B1546] py-16 flex flex-col items-center gap-3'>
+                <p1 className='text-white text-xl'> Courses Category</p1>
+                <h1 className='text-white text-3xl font-semibold'>Explore Course Category</h1>
+
+                <div className='grid max-sm:grid-cols-1  sm:max-lg:grid-cols-2 lg:grid-cols-3 bg-white rounded-md p-1'>
+                  <div className='grid grid-cols-2'>
+                    <CardTwo   className={`border-r-2 border-b-2  `}  title='design' desc='24 course'  iconn={ <VideoSettingsOutlinedIcon sx={{ fontSize:30 ,  color: '#025BFE' }}/> }/>
+                    <CardTwo     className={`border-b-2  `} title='developement' desc='24 course' iconn={ <CodeOffOutlinedIcon sx={{ fontSize:30,color: '#025BFE'}}/> }/>
+                    <CardTwo  className={`md:max-lg:border-b-2 border-r-2  `} title=' marketing' desc='24 course' iconn={ <LanguageOutlinedIcon sx={{ fontSize:30 ,color: '#025BFE' }}/> }/>
+                    <CardTwo   className={`md:max-lg:border-b-2  `} title='art and music' desc='24 course' iconn={ <AutoGraphOutlinedIcon sx={{ fontSize:30,color: '#025BFE'  }}/> }/>
+
+                  </div>
+                  <div className='border-x-2 w-[350px] flex justify-center items-center ' >
+                    <img src={person1}/>
+                  </div>
+                  <div className='grid grid-cols-2'>
+                   <CardTwo  className={`border-r-2 border-b-2 `}  title='design' desc='24 course'  iconn={ <InstallMobileOutlinedIcon sx={{ fontSize:30 ,  color: '#025BFE'}}/> }/>
+                    <CardTwo      className={`border-b-2 md:max-lg:border-r-2 `} title='developement' desc='24 course' iconn={ <PivotTableChartOutlinedIcon sx={{ fontSize:30,color: '#025BFE' }}/> }/>
+                    <CardTwo   className={`border-r-2   `} title=' marketing' desc='24 course' iconn={ < LocalConvenienceStoreOutlinedIcon sx={{ fontSize:30 ,color: '#025BFE'}}/> }/>
+                    <CardTwo  className={`  md:max-lg:border-r-2  `} title='art and music' desc='24 course' iconn={ <CellTowerOutlinedIcon sx={{ fontSize:30,color: '#025BFE' }}/> }/>
+
+                  </div>          
+        
+                </div>
+                <p className='text-white text-xl py-4'>Find your best online course? <span className='text-yellow-600 font-bold'> <a href='/'>Get Started</a></span> </p>
+        </div> 
 
 
 
