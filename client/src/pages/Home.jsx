@@ -168,7 +168,7 @@ function Home() {
                   Interactive Learning Engaging Students in the Digital Age
                 </h1>
                 <p className='text-xl  text-center max-sm:text-lg'> Get 1500+ courses Best Quality online Courses from Abacus </p>
-                <button className='bg-yellow-500 hover:bg-gradient-to-r  hover:from-[#e9bf37] hover:to-[#ddd35d]   px-3 py-1.5 rounded-md my-5'><a href='/'>Find Your Best Course</a></button>
+                <button className='bg-yellow-500 hover:bg-gradient-to-r  hover:from-[#e9bf37] hover:to-[#ddd35d]   px-3 py-1.5 rounded-md my-5'><a href='/courses'>Find Your Best Course</a></button>
               </div>
 
               <div className='grid gap-2 max-xs:grid-cols-1 xs:max-sm:grid-cols-2 sm:max-lg:grid-cols-3 lg:grid-cols-5  justify-between'>
