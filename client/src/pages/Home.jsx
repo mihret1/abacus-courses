@@ -176,17 +176,17 @@ function Home() {
                            desc='find your right instructor here'
                            iconn={<SchoolIcon sx={{ fontSize:55  }} />}
                            />
-                  <CardOne  title='Expert Instructor'
+                  <CardOne  title='15+ online courses'
                            desc='find your right instructor here'
                            iconn={<LaptopIcon sx={{ fontSize:55  }} />}/> 
-                  <CardOne  title='Expert Instructor'
-                           desc='find your right instructor here'
+                  <CardOne  title='300 membership'
+                           desc=' many amazing online course '
                            iconn={<GroupIcon  sx={{ fontSize:55 }}/>}/>  
-                   <CardOne  title='Expert Instructor'
-                           desc='find your right instructor here'
+                   <CardOne  title='online certeficate'
+                           desc='get your online certeficate'
                            iconn={<CardMembershipIcon  sx={{ fontSize:55  }}/>}/> 
-                    <CardOne  title='Expert Instructor'
-                           desc='find your right instructor here'
+                    <CardOne  title='400+ students'
+                           desc='join atctive students here'
                            iconn={<VerifiedIcon sx={{ fontSize:55 }}/>}/>
                    
               </div>

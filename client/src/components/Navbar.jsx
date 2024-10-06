@@ -60,12 +60,13 @@ const Navbar=()=>{
                                 label="Age"
                                 
                                 >
+                                  <MenuItem ><a href="/courses">All courses</a></MenuItem>
+
                                 <MenuItem ><a href="/web">web development</a></MenuItem>
-                                <MenuItem><a href='/web'>graphics design</a></MenuItem>
-                                <MenuItem> <a href="/web">mobile development</a></MenuItem>
-                                <MenuItem> <a href="/web">Digital marketing</a></MenuItem>
-                                <MenuItem> <a href="/web">online working</a></MenuItem>
-                                <MenuItem> <a href="/web">content creating</a></MenuItem>
+                                <MenuItem><a href='/graphics'>graphics design</a></MenuItem>
+                                <MenuItem> <a href="/mobile">mobile development</a></MenuItem>
+                                <MenuItem> <a href="/marketing">Digital marketing</a></MenuItem>
+                                
 
                                 </Select>
                             </FormControl>
@@ -74,7 +75,7 @@ const Navbar=()=>{
                             <a href='#whyus' className="hover:text-yellow-500">   <span>Why Us</span></a> 
                             <a href='#faq' className="hover:text-yellow-500">   <span>Faq</span></a> 
                             <a href='#contact' className="hover:text-yellow-500">   <span>Contact</span></a> 
-                            <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 py-[1px] text-white"><a href='/'>SignUp</a> </button>
+                            <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 py-[1px] text-white"><a href='/auth'>SignUp</a> </button>
 
                           </nav>
 
@@ -107,21 +108,22 @@ const Navbar=()=>{
                             label="Age"
                             
                             >
-                            <MenuItem ><a href="/">web development</a></MenuItem>
-                            <MenuItem><a href='/'>graphics design</a></MenuItem>
-                            <MenuItem> <a href="/">mobile development</a></MenuItem>
-                            <MenuItem> <a href="/">Digital marketing</a></MenuItem>
-                            <MenuItem> <a href="/">online working</a></MenuItem>
-                            <MenuItem> <a href="/">content creating</a></MenuItem>
+                            <MenuItem ><a href="/courses">All courses</a></MenuItem>
+
+                            <MenuItem ><a href="/web">web development</a></MenuItem>
+                            <MenuItem><a href='/graphics'>graphics design</a></MenuItem>
+                            <MenuItem> <a href="/mobile">mobile development</a></MenuItem>
+                            <MenuItem> <a href="/marketing">Digital marketing</a></MenuItem>
+                           
 
                             </Select>
                         </FormControl>
-                        <a href='/' className="hover:text-[#1F788C] pl-4">   <span>Register</span></a> 
-                        <a href='/' className="hover:text-[#1F788C]  pl-4">   <span>About us</span></a> 
-                        <a href='/' className="hover:text-[#1F788C]  pl-4">   <span>Why Us</span></a> 
-                        <a href='/' className="hover:text-[#1F788C]  pl-4">   <span>Faq</span></a> 
-                        <a href='/' className="hover:text-[#1F788C]  pl-4">   <span>Contact</span></a> 
-                        <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 text-white w-28 ml-4"><a href='/'>SignUp</a> </button>
+                        <a href='/register' className="hover:text-[#1F788C] pl-4">   <span>Register</span></a> 
+                        <a href='#aboutus' className="hover:text-[#1F788C]  pl-4">   <span>About us</span></a> 
+                        <a href='#whyus' className="hover:text-[#1F788C]  pl-4">   <span>Why Us</span></a> 
+                        <a href='#faq' className="hover:text-[#1F788C]  pl-4">   <span>Faq</span></a> 
+                        <a href='#contact' className="hover:text-[#1F788C]  pl-4">   <span>Contact</span></a> 
+                        <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 text-white w-28 ml-4"><a href='/auth'>SignUp</a> </button>
 
                         </nav>
 

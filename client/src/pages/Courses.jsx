@@ -44,33 +44,44 @@ function Courses() {
         
         <div className='pb-28 grid grid-cols-2 place-items-center  gap-y-10 gap-x-5 max-md:grid-cols-1 justify-center items-center'>
             <CardOne 
-            path='/'
+            path='/web'
             imgg={img1}
             title='Web development'
             desc=' Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
              Lorem ipsum may be used as a placeholder before the final copy is available'
             />
-            <CardOne 
+            <CardOne        
+              path='/web'
+
             imgg={img2}
             title='Graphic design'
             desc=' Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
              Lorem ipsum may be used as a placeholder before the final copy is available'
-            /><CardOne 
+            />
+            <CardOne 
+                        path='/web'
+
             imgg={img3}
             title='mobile development'
             desc=' Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
              Lorem ipsum may be used as a placeholder before the final copy is available'
             /><CardOne 
+            path='/web'
+
             imgg={img4}
             title='vidio editing'
             desc=' Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
              Lorem ipsum may be used as a placeholder before the final copy is available'
             /><CardOne 
+            path='/web'
+
             imgg={img2}
             title='Web development'
             desc=' Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.
              Lorem ipsum may be used as a placeholder before the final copy is available'
             /><CardOne 
+            path='/web'
+
             imgg={img1}
             title='Web development'
             desc=' Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.

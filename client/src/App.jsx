@@ -6,6 +6,10 @@ import Footer from './components/Footer'
 import Register from './pages/Register'
 import Courses from './pages/Courses'
 import WebDevelopment from './pages/CoursesDetail/WebDevelopment'
+import Graphics from './pages/CoursesDetail/GraphicsDesign'
+import MobileDevelopment from './pages/CoursesDetail/MobileDevelopment'
+import Marketing from './pages/CoursesDetail/DigitalMarketing'
+import Auth from './pages/Auth'
 
 
 
@@ -19,6 +23,12 @@ function App() {
             <Route  path='/register' element={<Register />} />
             <Route  path='/courses' element={<Courses />} />
             <Route  path='/web' element={<WebDevelopment />} />
+            <Route  path='/graphics' element={<Graphics />} />
+            <Route  path='/mobile' element={<MobileDevelopment />} />
+            <Route  path='/marketing' element={<Marketing />} />
+
+            <Route  path='/auth' element={<Auth />} />
+
 
 
          </Routes>
