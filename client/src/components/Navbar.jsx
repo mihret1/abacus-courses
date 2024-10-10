@@ -34,9 +34,9 @@ const Navbar=()=>{
         <div  style={{zIndex: 100,   }}  className={`  ${transparent ? 'bg-white ' : 'bg-transparent'}   ${transparent && 'fixed shadow-lg '}   w-[100%] `}>
                   
                   
-                  <div className={`flex items-center justify-between px-7 md:max-lg:px-4 ${!transparent && 'homeOne'} h-24 w-[100%]  text-bold  ${transparent ? 'text-black' :'text-white'} `}>
+                  <div className={`flex items-center justify-between px-7 max-sm:px-2 md:max-lg:px-4 ${!transparent && 'homeOne'} h-24 w-[100%]  text-bold  ${transparent ? 'text-black' :'text-white'} `}>
 
-                         <a href="/"> <div className="flex gap-2 items-center">  <img src={logo}  className="w-16 h-16 rounded-full"/> <span className={`text-[24px] md:max-lg:text-[19px] font-bold  `}>Eagle Training center</span> </div></a>
+                         <a href="/"> <div className="flex gap-2 items-center">  <img src={logo}  className="w-16 h-16 rounded-full"/> <span className={`text-[24px] md:max-lg:text-[19px] max-sm:[18px] font-bold  `}>Eagle Training Center</span> </div></a>
                          
                           <nav className=" hidden md:flex gap-4 text-[21px] md:max-lg:text-[18px]  md:max-lg:gap-2 items-center ">
                         

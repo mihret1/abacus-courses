@@ -54,8 +54,8 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import Register from './Register';
 import banner from '../assets/banner.jpg'
-import vidio from '../assets/faq.mp4'
-import opportunity from '../assets/opportunity.mp4'
+import opportunity from '../assets/faq.mp4'
+import faq from '../assets/opportunity.mp4'
 
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 
@@ -139,7 +139,6 @@ function Home() {
                                   <span> 5. Facebook Boost</span>
                                   <span> 6. Facebook Ad Campaign Part One</span>
                                   <span>  7. Facebook Ad Campaign Part Two</span>
-                                  <span> - ETC Quiz 1</span>
                               </div>
                              </AccordionDetails>
                             </Accordion>
@@ -153,7 +152,6 @@ function Home() {
                                 <span>  2. Features of Instagram</span>
                                 <span>  3.How the Instagram Algorithm Work?</span>
                                 <span> 4.Instagram Marketing</span>
-                                <span> - ETC Quiz 2</span>
                               </div>
                           </AccordionDetails>
                             </Accordion>
@@ -166,7 +164,6 @@ function Home() {
                                 <span> 1. Introduction to Tik Tok </span>
                                 <span> 2. How the Tik Tok Algorithm Work?</span>
                                 <span>3.How To Grow Tik Tok Account?</span>
-                                <span> - ETC Quiz 3</span>
                               </div>
                           </AccordionDetails>
                             </Accordion>
@@ -181,10 +178,7 @@ function Home() {
                                 <span> 3. How the YouTube Algorithms work? Part Two</span>
                                 <span>4. How to grow YouTube Channel? Part One </span>
                                 <span> 5. How to grow YouTube Channel? Part Two</span>
-                                <span> - Live Question and Answer session</span>
-                                <span> - ETC Quiz 4</span>
-                                <span> - Final Exam </span>
-                                <span>  - Certification</span>
+                              
                               </div>
                           </AccordionDetails>
                             </Accordion>
@@ -246,7 +240,7 @@ function Home() {
            <div className=' w-[350px] h-[440px] max-md:h-[350px] '>
               <video
                 className='w-[100%] h-full' 
-                src={vidio}
+                src={faq}
                 controls
                 autoPlay 
                 muted 
@@ -255,7 +249,7 @@ function Home() {
               </video>
            </div>
            <div className='flex flex-col max-sm:text-lg text-xl sm:pt-6 '>
-               <span className='text-2xl  pb-2 md:text-3xl font-semibold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>  Opportunities of Learning Digital Marketing </span>
+               <span className='text-2xl max-sm:text-center pb-2 md:text-3xl font-semibold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>  Opportunities of Learning Digital Marketing </span>
                <span className='md:pl-5 '><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Broadened Career Opportunities </span>
                <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; High Industry Demand </span>
                <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Enhanced Entrepreneurial Capabilities </span>
@@ -273,10 +267,10 @@ function Home() {
 
 
          {/* section five */}
-      <div id="faq" className='flex max-md:flex-col justify-center gap-10  px-2 mb-4'>
+      <div id="faq" className='flex max-md:flex-col max-md:items-center justify-center gap-10  px-2 mb-4'>
         
         <div className='w-[700px] max-xs:w-[340px] xs:max-md:w-[90%]    flex flex-col gap-y-2 '>
-          <p className='text-[40px] max-sm:text-2xl font-bold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>Mostly Asked Question</p>
+          <p className='text-[40px] max-sm:text-2xl font-bold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>Frequently Asked Question</p>
           <div className='  flex flex-col '>
           <Accordion sx={{ backgroundColor:expanded == 'panel1' && '#F4F9FF', }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
@@ -371,11 +365,11 @@ function Home() {
 
           {/* section five */}
           <div id='auth' className='flex flex-col items-center pt-32 pb-5 gap-2 px-3'>
-              <p className='text-3xl text-center font-semibold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>You want to learn and unable to do it, register  </p>
+              <p className='text-3xl text-center font-semibold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>You want to learn and unable to do it, Signup  </p>
              <span className=''><input type='text' placeholder='fullname...' className='border w-[500px] max-sm:w-[335px] h-10 px-3 outline-none  border-purple-400' /></span> 
              <span> <input type='text ' placeholder='phone number... ' className='border w-[500px] max-sm:w-[335px] h-10 px-3 outline-none border-purple-400' /></span> 
                <span> <input type='email' placeholder='email...' className='border w-[500px] h-10 max-sm:w-[335px] px-3 outline-none border-purple-400'/></span> 
-              <button className='border  text-xl text-white w-72 max-sm:w-48 py-2 bg-gradient-to-r from-[#0B1546]  to-pink-500 hover:bg-gradient-to-r hover:from-pink-500 hover:to-[#0B1546] '>Register</button>
+              <button className='border  text-xl text-white w-72 max-sm:w-48 py-2 bg-gradient-to-r from-[#0B1546]  to-pink-500 hover:bg-gradient-to-r hover:from-pink-500 hover:to-[#0B1546] '>Signup</button>
 
           </div>
 

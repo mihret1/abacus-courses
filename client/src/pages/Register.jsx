@@ -189,7 +189,7 @@ function Register() {
     try {
       const options = {
         maxSizeMB: 0.04, // Reduce image to around 500KB
-        maxWidthOrHeight: 700,
+        // maxWidthOrHeight: 700,
       };
       const compressedFile = await imageCompression(file, options);
       const base64 = await imageCompression.getDataUrlFromFile(compressedFile);
@@ -264,7 +264,7 @@ function Register() {
            <p className='text-3xl max-xs:text-xl pb-10 font-bold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>Register for Digital Marketing Course</p> 
 
         </div>
-         <div className='  flex gap-7  max-mdd:flex-col  justify-center  '>
+         <div className='  flex gap-7  max-mdd:flex-col   max-mdd:items-center  justify-center  '>
              <form onSubmit={handleRegistration} className='flex flex-col gap-2 max-mdd:w-[90%]  w-[590px] max-md:justify-center px-5 shadow-xl py-3 '>
                 <div className='flex flex-col gap-1' >
                    <span className=' '>ስም [Name]
@@ -297,7 +297,7 @@ function Register() {
                               {/* <span>   Mike Teke</span>  */}
                            <li> amount: 3500 birr</li> 
                           </ul>
-                          <div className='flex justify-between'> 
+                          <div className='flex justify-between items-center'> 
                            <input type="radio"  name="account" value="cbe" checked={account==='cbe'}  onChange={(e)=>SetAccount(e.target.value)}  className='scale-150' />
                           <img src={cbe} className=' h-16 w-16 rounded-full '/>
 
@@ -312,7 +312,7 @@ function Register() {
                            <li>42084689 | Mike Teke</li> 
                            <li> amount: 3500 birr</li> 
                         </ul>
-                        <div className='flex justify-between'> 
+                        <div className='flex justify-between items-center'> 
                            <input type="radio"  name="account" value="abbysinia" checked={account==='abbysinia'}  onChange={(e)=>SetAccount(e.target.value)}  className='scale-150' />
                            <img src={abby} className=' h-16 w-20 rounded-full '/>
 
@@ -327,7 +327,7 @@ function Register() {
                            <li> 013201210701600 | Mike Teke</li> 
                            <li> amount: 3500 birr</li> 
                         </ul>
-                        <div className='flex justify-between'> 
+                        <div className='flex justify-between items-center'> 
                            <input type="radio"  name="account" value="awash" checked={account==='awash'}  onChange={(e)=>SetAccount(e.target.value)}  className='scale-150' />
                            <img src={awash} className=' h-16 w-24 rounded-full '/>
 
@@ -345,7 +345,7 @@ function Register() {
                            <li>0912366830 | Mike Teke</li> 
                            <li> amount: 3500 birr</li> 
                           </ul>
-                          <div className='flex justify-between'> 
+                          <div className='flex justify-between items-center'> 
                            <input type="radio"  name="account" value="telebir" checked={account==='telebir'} onChange={(e)=>SetAccount(e.target.value)}  className='scale-150' />
                           <img src={telebir} className=' h-16 w-20 rounded-full '/>
 
@@ -376,10 +376,10 @@ function Register() {
                         } 
 
 
-                        { errorr && <p className='text-center text-xl font-semibol text-red-500'>unable to register, try again!</p>
+                        { errorr && <p className='text-center text-xl font-semibol text-red-500'>Unable to register, try again!</p>
                         } 
 
-                         { sucesss  && <p className='text-center text-xl font-semibol text-green-500'>successfully register</p>
+                         { sucesss  && <p className='text-center  font-semibol text-green-500'>Successfully register,We will review the payment and we will send you the class room telegram link</p>
                         }            
              </form>
                           
