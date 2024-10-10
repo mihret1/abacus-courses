@@ -20,12 +20,12 @@ function App() {
       {/* <Navbar /> */}
          <Routes>
             <Route exact={true} path='/' element={<Home />} />
-            <Route  path='/register' element={<Register />} />
+            {/* <Route  path='/register' element={<Register />} />
             <Route  path='/courses' element={<Courses />} />
             <Route  path='/web' element={<WebDevelopment />} />
             <Route  path='/graphics' element={<Graphics />} />
             <Route  path='/mobile' element={<MobileDevelopment />} />
-            <Route  path='/marketing' element={<Marketing />} />
+            <Route  path='/marketing' element={<Marketing />} /> */}
 
             <Route  path='/auth' element={<Auth />} />
 

@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 .homeOne{
-    background-color: #0B1546;
-    opacity: 0.9;
+    /* background-color: #0B1546; */
+    background-color: #000D1D;
+    opacity: 1;
 }

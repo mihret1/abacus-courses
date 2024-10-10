@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react"
 import p1 from '../assets/p1.jpg'
+import logo from '../assets/logoo.jpg'
 
 import {Link} from 'react-router-dom'
 import InputLabel from '@mui/material/InputLabel';
@@ -33,49 +34,18 @@ const Navbar=()=>{
         <div  style={{zIndex: 100,   }}  className={`  ${transparent ? 'bg-white ' : 'bg-transparent'}   ${transparent && 'fixed shadow-lg '}   w-[100%] `}>
                   
                   
-                  <div className={`flex items-center justify-between px-7 md:max-lg:px-4 ${!transparent && 'homeOne'} h-28 w-[100%]  text-bold  ${transparent ? 'text-black' :'text-white'} `}>
+                  <div className={`flex items-center justify-between px-7 md:max-lg:px-4 ${!transparent && 'homeOne'} h-24 w-[100%]  text-bold  ${transparent ? 'text-black' :'text-white'} `}>
 
-                         <a href="/"> <div className="flex gap-2 items-center">  <img src={p1}  className="w-14 h-14 rounded-full"/> <span className={`text-[24px] md:max-lg:text-[19px] font-bold  `}>Abacus Courses</span> </div></a>
+                         <a href="/"> <div className="flex gap-2 items-center">  <img src={logo}  className="w-16 h-16 rounded-full"/> <span className={`text-[24px] md:max-lg:text-[19px] font-bold  `}>Eagle Training center</span> </div></a>
                          
                           <nav className=" hidden md:flex gap-4 text-[21px] md:max-lg:text-[18px]  md:max-lg:gap-2 items-center ">
                         
-                            
-                            <FormControl sx={{ width:100,'&:hover .MuiInputLabel-root': {color: 'yellow' },}}>
-                              <InputLabel sx={{color: transparent ? 'black' : 'white', fontSize:'20px', }}  >Course</InputLabel>
-                                <Select 
-                                 sx={{ color:transparent ? 'white' :'black', width:120, 
-                                 '.MuiOutlinedInput-notchedOutline': {
-                                    border: 'none',
-                                  },
-                                  '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                    border: 'none',
-                                  },
-                                  '&:hover .MuiOutlinedInput-notchedOutline': {
-                                    border: 'none',
-                                  },
-                                  '&.Mui-focused': {
-                                    outline: 'none',
-                                  },
-                                   }}
-                                label="Age"
-                                
-                                >
-                                  <MenuItem ><a href="/courses">All courses</a></MenuItem>
-
-                                <MenuItem ><a href="/web">web development</a></MenuItem>
-                                <MenuItem><a href='/graphics'>graphics design</a></MenuItem>
-                                <MenuItem> <a href="/mobile">mobile development</a></MenuItem>
-                                <MenuItem> <a href="/marketing">Digital marketing</a></MenuItem>
-                                
-
-                                </Select>
-                            </FormControl>
-                            <a href='/register' className="hover:text-yellow-500">   <span>Register</span></a> 
-                            <a href='#aboutus' className="hover:text-yellow-500">   <span>About us</span></a> 
-                            <a href='#whyus' className="hover:text-yellow-500">   <span>Why Us</span></a> 
+                            <a href='#course' className="hover:text-yellow-500">   <span>Course</span></a> 
+                            <a href='#register' className="hover:text-yellow-500">   <span>Register</span></a> 
+                            <a href='#opportunity' className="hover:text-yellow-500">   <span>Opportunity</span></a> 
                             <a href='#faq' className="hover:text-yellow-500">   <span>Faq</span></a> 
-                            <a href='#contact' className="hover:text-yellow-500">   <span>Contact</span></a> 
-                            <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 py-[1px] text-white"><a href='/auth'>SignUp</a> </button>
+
+                            <button className=" bg-[#000D1D]  hover:text-yellow-500 text-lg px-3 py-[1px] text-white"><a href='#auth'>SignUp</a> </button>
 
                           </nav>
 
@@ -84,46 +54,16 @@ const Navbar=()=>{
                           </button>
                   
                   </div> 
-                    {  (menu) && <div className="bg-white h-72 md:hidden absolute w-[100%] " style={{zIndex: 100,  }}>
+                    {  (menu) && <div className="bg-white h-44 md:hidden absolute w-[100%] " style={{zIndex: 100,  }}>
                         <nav className="flex flex-col gap-2 text-xl " style={{ borderTop :transparent && '2px solid black' }}>
                         
                             
-                        <FormControl sx={{ width:100,'&:hover .MuiInputLabel-root': {color: '#1F788C' },}}>
-                          <InputLabel sx={{color:'black', fontSize:'20px', }}  >Course</InputLabel>
-                            <Select 
-                             sx={{ color:transparent ? 'white' :'black', width:120, 
-                             '.MuiOutlinedInput-notchedOutline': {
-                                border: 'none',
-                              },
-                              '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                                border: 'none',
-                              },
-                              '&:hover .MuiOutlinedInput-notchedOutline': {
-                                border: 'none',
-                              },
-                              '&.Mui-focused': {
-                                outline: 'none',
-                              },
-                               }}
-                            label="Age"
-                            
-                            >
-                            <MenuItem ><a href="/courses">All courses</a></MenuItem>
+                            <a href='#course' className="hover:text-yellow-500">   <span>Course</span></a> 
+                            <a href='#register' className="hover:text-yellow-500">   <span>Register</span></a> 
+                            <a href='#opportunity' className="hover:text-yellow-500">   <span>Opportunity</span></a> 
+                            <a href='#faq' className="hover:text-yellow-500">   <span>Faq</span></a> 
 
-                            <MenuItem ><a href="/web">web development</a></MenuItem>
-                            <MenuItem><a href='/graphics'>graphics design</a></MenuItem>
-                            <MenuItem> <a href="/mobile">mobile development</a></MenuItem>
-                            <MenuItem> <a href="/marketing">Digital marketing</a></MenuItem>
-                           
-
-                            </Select>
-                        </FormControl>
-                        <a href='/register' className="hover:text-[#1F788C] pl-4">   <span>Register</span></a> 
-                        <a href='#aboutus' className="hover:text-[#1F788C]  pl-4">   <span>About us</span></a> 
-                        <a href='#whyus' className="hover:text-[#1F788C]  pl-4">   <span>Why Us</span></a> 
-                        <a href='#faq' className="hover:text-[#1F788C]  pl-4">   <span>Faq</span></a> 
-                        <a href='#contact' className="hover:text-[#1F788C]  pl-4">   <span>Contact</span></a> 
-                        <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 text-white w-28 ml-4"><a href='/auth'>SignUp</a> </button>
+                        <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 text-white w-28 ml-4"><a href='#auth'>SignUp</a> </button>
 
                         </nav>
 
