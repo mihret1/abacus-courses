@@ -195,7 +195,7 @@ function Register() {
       const base64 = await imageCompression.getDataUrlFromFile(compressedFile);
       SetReciept(base64);
     } catch (error) {
-      console.error('Error compressing the file:', error);
+      console.error('Error Compressing the file:', error);
     }
   };
 
