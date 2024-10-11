@@ -8,12 +8,12 @@ const Signup=async(req,res)=>{
         const {fullname,email,password} = req.body
 
         const existEmail=await User.findOne({email})
-        if(existEmail) res.send('email already register')
+        if(existEmail) return res.status(400).send('email already register')
 
         const salt= await bcrypt.genSalt(10)
         const hashedPassword= await bcrypt.hash(password,salt)
 
-        const user=await User.create({fullname,email,hashedPassword})
+        const user=await User.create({fullname,email,password:hashedPassword})
         res.status(200).json(user)
         
     }catch(error){
@@ -21,18 +21,19 @@ const Signup=async(req,res)=>{
     }
   
     
+
 }
 
 const Login=async(req,res)=>{
     try{
         const {email,password}=req.body
-        const isExist=await User.findOne({email})
+        const user=await User.findOne({email})
 
-        if(!isExist) res.send('email doesnt exist')
-        const matched= await bcrypt.compare(password,isExist.password)  
+        if(!user) return res.status(400).send('email doesnt exist')
+        const matched= await bcrypt.compare(password,user.password)  
 
-        if(!matched) res.send('email or passord incorrect')
-         res.status(200).json(isExist)
+        if(!matched) return res.status(400).send('email or passord incorrect')
+         res.status(200).json({msg:'sucessfully login',user})
       
      }catch(error){
         res.status(500).json(error)
@@ -40,4 +41,17 @@ const Login=async(req,res)=>{
 }
 
 
-module.exports={Login,Signup}
+ const deleteUser=async(req,res)=>{
+    try{
+        const todelete=await User.findById(req.params.id)
+        if(!todelete) return res.status(400).send('user doenst exit')
+        const user=await User.findByIdAndDelete(req.params.id)
+        if(!user) return res.status(400).send('faild to delete')
+        res.status(200).json({msg:'deletd',user})    
+    }catch(error){
+        res.status(500).send(error)
+    }
+ }
+
+
+module.exports={Login,Signup,deleteUser}

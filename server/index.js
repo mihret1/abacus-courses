@@ -6,7 +6,8 @@ const express= require('express')
 const app=express()
 const mongoose=require('mongoose')
 
-const PORT=3000
+require('dotenv').config()
+const PORT=process.env.PORT || 4000
 const URL='mongodb://localhost/eagle_training_center'
 
 app.use(express.json())
@@ -17,7 +18,7 @@ app.use('/user',authRoute)
 mongoose.connect(URL)
         .then(()=>{
             app.listen((PORT),()=>{
-                console.log('backend and database is connected')
+                console.log(`backend run on ${PORT} and database is connected`)
 
             })
         })
