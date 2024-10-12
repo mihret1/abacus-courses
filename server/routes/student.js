@@ -11,4 +11,4 @@ routes.route('/:id')
        .put(updateStudent)       
 
 
-module.exports=routes       
+module.exports=routes

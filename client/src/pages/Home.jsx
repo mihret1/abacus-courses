@@ -91,7 +91,7 @@ function Home() {
               <div className='homeOne    flex justify-center gap-7  pb-24 h-[100%] w-[100%] text-white text-bold pt-12 max-sm:pt-6'>
                     
                            <iframe 
-                            className='w-[92%]  h-[550px] max-sm:h-[300px] sm:max-mdd:[400px] rounded-xl'
+                            className='w-[70%]  h-[550px] max-sm:h-[300px] sm:max-mdd:[400px] rounded-xl'
                             loading="lazy" 
                             title="Web Development" 
                             src="https://www.youtube.com/embed/RkmpVOTs7Es?autoplay=1&mute=1&loop=1&playlist=RkmpVOTs7Es" 

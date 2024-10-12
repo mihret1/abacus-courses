@@ -169,20 +169,19 @@ import emailjs from '@emailjs/browser';
 import imageCompression from 'browser-image-compression';
 
 import CircularProgress from '@mui/material/CircularProgress'; // MUI Loading Spinner
-
+import axios from 'axios'
 
 function Register() {
     const [fullname,SetFullname]=useState('')
-    const [email,SetEmail]=useState('')
     const [phone,SetPhone]=useState('')
-    const [address,SetAddress]=useState('')
-    const [course,SetCourse]=useState('')
     const [reciept,SetReciept]=useState('')
     const [account,SetAccount]=useState('')
    const [errorr,setError]=useState(false)
    const [sucesss,setSucess]=useState(false)
    const [fieldControl,setFieldcontrol]=useState(false)
    const [isLoading, setIsLoading] = useState(false); 
+   const [backendSucess,setBackendSucess]=useState(false)
+   const [backendError,setBackendError]=useState(false)
 
 
    const handleFileUpload = async (file) => {
@@ -199,45 +198,47 @@ function Register() {
     }
   };
 
-    const handleRegistration=(e)=>{
-     
-
-
+    const handleRegistration=async(e)=>{
      e.preventDefault()
      setError(false)
      setSucess(false)
+     setBackendError(false)
+     setBackendSucess(false)
      setIsLoading(true);  // Start loading
      setFieldcontrol(false)
 
      if(!fullname || !phone || !reciept || !account) {
       setFieldcontrol(true)
-      setIsLoading(false);  // Start loading
-
-      
+      setIsLoading(false);  //stop loading 
       return;
     }
      const  serviceId='service_3ja3tcc'
      const  publicKey='EhN2wmPgm4E7rWzdO'
      const  templateId='template_2dmvazj'
-
-
-      const templateParams={
+     const templateParams={
           from_name : fullname,
           from_email:fullname,
           to_name:' egle training center ',
           name:fullname,
           phone_number:phone,
           accountType:account,
-          reciept:reciept,
+          // reciept:reciept,
           }
 
-         emailjs.send(serviceId,templateId,templateParams,publicKey)
+          try{
+            const { data }= await axios.post('http://localhost:1000/student',{fullname,phone,account,reciept})
+            console.log(data) 
+            setBackendSucess(true)
+            setBackendError(false)
+
+            await emailjs.send(serviceId,templateId,templateParams,publicKey)
             .then((response)=>{
-              console.log('sucessfully sent',response)
+            console.log('sucessfully sent via email',response) 
               SetFullname('')
               SetPhone('')
               SetAccount('')
               SetReciept('')
+
               setError(false)
               setSucess(true)
               setFieldcontrol(false)
@@ -245,13 +246,21 @@ function Register() {
             })
             .catch((error)=>{
               setFieldcontrol(false)
-
               setError(true)
               setSucess(false)
               setIsLoading(false);
               console.log('there is error !',error)
               
             })
+          }catch(error){
+            setFieldcontrol(false)
+            setBackendSucess(false)
+            setBackendError(true)
+            setIsLoading(false)
+            console.log(error)
+          }
+
+       
 
 
       }
@@ -376,10 +385,10 @@ function Register() {
                         } 
 
 
-                        { errorr && <p className='text-center text-xl font-semibol text-red-500'>Unable to register, try again!</p>
+                        { (errorr || backendError) && <p className='text-center text-xl font-semibol text-red-500'>Unable to register, try again!</p>
                         } 
 
-                         { sucesss  && <p className='text-center  font-semibol text-green-500'>Successfully register,We will review the payment and we will send you the class room telegram link</p>
+                         { (sucesss && backendSucess)  && <p className='text-center  font-semibol text-green-500'>Successfully register,We will review the payment and we will send you the class room telegram link</p>
                         }            
              </form>
                           
