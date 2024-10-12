@@ -134,7 +134,7 @@ function Home() {
               <div className='homeOne    flex justify-center gap-7  pb-24 h-[100%] w-[100%] text-white text-bold pt-12 max-sm:pt-6'>
                     
                            <iframe 
-                            className='w-[70%]  h-[550px] max-sm:h-[300px] sm:max-mdd:[400px] rounded-xl'
+                            className='max-sm:w-[90%] sm:max-md:w-[80%] md:max-lg:w-[70%]  w-[65%]  h-[500px] max-sm:h-[270px] sm:max-mdd:[370px] rounded-xl'
                             loading="lazy" 
                             title="Web Development" 
                             src="https://www.youtube.com/embed/RkmpVOTs7Es?autoplay=1&mute=1&loop=1&playlist=RkmpVOTs7Es" 
@@ -160,7 +160,7 @@ function Home() {
                    </iframe>
                 </div>
                 <div className='w-[700px] max-xs:w-[340px] xs:max-md:w-[90%]    flex flex-col gap-y-2 '>
-                    <p className='text-[40px] max-sm:text-2xl font-bold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>Our Curriculum</p>
+                    <p className='text-[40px] max-sm:text-2xl font-bold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>Course Outline</p>
                   
                     <div className='  flex flex-col '>
                       <Accordion sx={{ backgroundColor:expanded == 'panel1' && '#F4F9FF', }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
@@ -292,7 +292,7 @@ function Home() {
               </video>
            </div>
            <div className='flex flex-col max-sm:text-lg text-xl sm:pt-6 '>
-               <span className='text-2xl max-sm:text-center pb-2 md:text-3xl font-semibold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>  Opportunities of Learning Digital Marketing </span>
+               <span className='text-2xl max-sm:text-center pb-2 md:text-3xl font-semibold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'> Work Opportunities for Learning Digital Marketing </span>
                <span className='md:pl-5 '><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Broadened Career Opportunities </span>
                <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; High Industry Demand </span>
                <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Enhanced Entrepreneurial Capabilities </span>

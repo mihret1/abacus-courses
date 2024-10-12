@@ -45,7 +45,7 @@ const Navbar=()=>{
                             <a href='#opportunity' className="hover:text-yellow-500">   <span>Opportunity</span></a> 
                             <a href='#faq' className="hover:text-yellow-500">   <span>Faq</span></a> 
 
-                            <button className=" bg-[#000D1D]  hover:text-yellow-500 text-lg px-3 py-[1px] text-white"><a href='#auth'>SignUp</a> </button>
+                            <button className=" bg-[#000D1D]  hover:text-yellow-500 text-lg px-3 py-[1px] text-white"><a href='#interested'>SignUp</a> </button>
 
                           </nav>
 
@@ -63,7 +63,7 @@ const Navbar=()=>{
                             <a href='#opportunity' className="hover:text-yellow-500">   <span>Opportunity</span></a> 
                             <a href='#faq' className="hover:text-yellow-500">   <span>Faq</span></a> 
 
-                        <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 text-white w-28 ml-4"><a href='#auth'>SignUp</a> </button>
+                        <button className=" bg-[#1F788C] hover:bg-slate-500 text-lg px-3 text-white w-28 ml-4"><a href='#interested'>SignUp</a> </button>
 
                         </nav>
 

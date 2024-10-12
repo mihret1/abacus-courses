@@ -30,7 +30,7 @@ function Footer() {
            <a href='#course' className="hover:text-[#1F788C]"> <span>Course</span></a> 
            <a href='#opportunity' className="hover:text-[#1F788C]"><span>Opportunity</span></a> 
            <a href='#faq' className="hover:text-[#1F788C]">   <span>Faq</span></a> 
-          <a href='#auth' className="hover:text-[#1F788C]">   <span>Interested</span></a> 
+          <a href='#interested' className="hover:text-[#1F788C]">   <span>Interested</span></a> 
              
         </div>
         <a href='#register' className='bg-white text-lg  hover:bg-[#7fcddf]  font-semibold rounded-md text-black px-3 py-2'>Register Course</a>
