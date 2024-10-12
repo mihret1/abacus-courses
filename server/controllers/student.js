@@ -9,6 +9,8 @@ const registerStudent=async(req,res)=>{
         const newStudent= await Student.create(student)
         if(!newStudent) return res.status(400).send('cant create')
         res.status(200).json(newStudent)
+
+        
         
     }catch(error){
         res.status(500).json({'the error':error})

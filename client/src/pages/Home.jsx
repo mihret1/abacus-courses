@@ -58,12 +58,55 @@ import opportunity from '../assets/faq.mp4'
 import faq from '../assets/opportunity.mp4'
 
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
+import axios from 'axios';
+import CircularProgress from '@mui/material/CircularProgress'; // MUI Loading Spinner
 
 function Home() {
 
 
   const [expanded, setExpanded] = useState(false); // State to track expanded accordion
   const [expandedInner, setExpandedInner] = useState(false); // State to track expanded accordion
+
+  const [interestedName,setInteresetedName]=useState('')
+  const [interestedPhone,setInterestedPhone]=useState('')
+  const [interestedEmail,setInteresetedEmail]=useState('')
+  const [interesetdField,setInterestedField]=useState(false)
+  const [interestedError,setInterestedError]=useState(false)
+  const [interesetdLoading,setInterestedLoading]=useState(false)
+  const [interestedSucess,setInterestedSucess]=useState(false)
+
+  const handleInterestedRegisteration=async(e)=>{
+     e. preventDefault()
+     setInterestedLoading(true)
+     setInterestedField(false)
+     setInterestedError(false)
+     setInterestedSucess(false)
+     
+     try{
+      if (!interestedName || !interestedPhone || !interestedEmail){
+        setInterestedField(true)
+        setInterestedLoading(false)
+        return
+      }
+      const {data}= await axios.post('http://localhost:1000/interested',{fullname:interestedName,phoneNumber:interestedPhone,email:interestedEmail})
+          console.log(data)
+          setInteresetedName('')
+          setInterestedPhone('')
+          setInteresetedEmail('')
+          setInterestedField(false)
+          setInterestedSucess(true)
+          setInterestedLoading(false)
+      }catch(error){
+        
+      console.log(error)
+      setInterestedField(false)
+      setInterestedLoading(false)
+      setInterestedSucess(false)
+     }
+    
+    }
+
+
   const handleChange = (panel) => (event, isExpanded) => {
     // Toggle the accordion state
     setExpanded(isExpanded ? panel : false);
@@ -364,12 +407,28 @@ function Home() {
 
 
           {/* section five */}
-          <div id='auth' className='flex flex-col items-center pt-32 pb-5 gap-2 px-3'>
-              <p className='text-3xl text-center font-semibold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>You want to learn and unable to do it, Signup  </p>
-             <span className=''><input type='text' placeholder='fullname...' className='border w-[500px] max-sm:w-[335px] h-10 px-3 outline-none  border-purple-400' /></span> 
-             <span> <input type='text ' placeholder='phone number... ' className='border w-[500px] max-sm:w-[335px] h-10 px-3 outline-none border-purple-400' /></span> 
-               <span> <input type='email' placeholder='email...' className='border w-[500px] h-10 max-sm:w-[335px] px-3 outline-none border-purple-400'/></span> 
-              <button className='border  text-xl text-white w-72 max-sm:w-48 py-2 bg-gradient-to-r from-[#0B1546]  to-pink-500 hover:bg-gradient-to-r hover:from-pink-500 hover:to-[#0B1546] '>Signup</button>
+          <div id='interested' className='flex flex-col items-center pt-32 pb-5 gap-2 px-3'>
+             
+             <p className='text-3xl text-center font-semibold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>You want to learn and unable to do it, Signup  </p>
+             <span className=''>
+              <input type='text' placeholder='fullname...' className='border w-[500px] max-sm:w-[335px] h-10 px-3 outline-none  border-purple-400' 
+                    value={interestedName}   onChange={(e)=>setInteresetedName(e.target.value)}/>
+              </span> 
+             <span> <input type='text ' placeholder='phone number... ' className='border w-[500px] max-sm:w-[335px] h-10 px-3 outline-none border-purple-400' 
+                          value={interestedPhone}   onChange={(e)=>setInterestedPhone(e.target.value)}
+             /></span> 
+             <span> <input type='email' placeholder='email...' className='border w-[500px] h-10 max-sm:w-[335px] px-3 outline-none border-purple-400'
+                     value={interestedEmail}   onChange={(e)=>setInteresetedEmail(e.target.value)}
+              /></span> 
+              {interesetdLoading && <span className='text-center'><CircularProgress /></span>}
+             <button 
+                onClick={handleInterestedRegisteration}
+                className='border  text-xl text-white w-72 max-sm:w-48 py-2 bg-gradient-to-r from-[#0B1546]  to-pink-500 hover:bg-gradient-to-r hover:from-pink-500 hover:to-[#0B1546] '>
+                  Signup
+             </button>
+             <p className='text-center text-red-600'>{interesetdField && 'Enter All field'}</p>
+             {interestedError && <p className='text-center text-red-600'>Sorry, Unable to register</p>}
+             {interestedSucess && <p className='text-center text-green-600'>Nice!, You are registered</p>}
 
           </div>
 
