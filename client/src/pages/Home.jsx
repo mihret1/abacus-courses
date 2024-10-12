@@ -280,7 +280,7 @@ function Home() {
             
           {/* section four */}
         <div id='opportunity' className='flex max-sm:flex-col max-sm:items-center py-40 justify-center  sm:max-md:gap-5 max-md:px-4'>
-           <div className=' w-[350px] h-[440px] max-md:h-[350px] '>
+           <div className=' w-[350px] h-[400px] max-md:h-[350px] '>
               <video
                 className='w-[100%] h-full' 
                 src={faq}
@@ -293,12 +293,12 @@ function Home() {
            </div>
            <div className='flex flex-col max-sm:text-lg text-xl sm:pt-6 '>
                <span className='text-2xl max-sm:text-center pb-2 md:text-3xl font-semibold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'> Work Opportunities for Learning Digital Marketing </span>
-               <span className='md:pl-5 '><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Broadened Career Opportunities </span>
-               <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; High Industry Demand </span>
-               <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Enhanced Entrepreneurial Capabilities </span>
-               <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Global Job Opportunities </span>
+               <span className='md:pl-5 '><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Online shopping  </span>
+               <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Paid Advertisement </span>
+               <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Upwork </span>
+               {/* <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Global Job Opportunities </span>
                <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Data-Driven Decision Making </span>
-               <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Room for Creative Innovation</span>
+               <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Room for Creative Innovation</span> */}
 
            </div>
           
@@ -317,65 +317,59 @@ function Home() {
           <div className='  flex flex-col '>
           <Accordion sx={{ backgroundColor:expanded == 'panel1' && '#F4F9FF', }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography>{expanded !== 'panel1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}What courses are given by Abacus</Typography>
+          <Typography>{expanded !== 'panel1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}What course is teach by eagle training center</Typography>
         </AccordionSummary>
         <AccordionDetails >
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit
-          </Typography>
+          Digital marketing, which is changing many lives nowadays  </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion sx={{ backgroundColor:expanded == 'panel2' && '#F4F9FF', }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography> {expanded !== 'panel2' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}How I can Apply for courses</Typography>
+          <Typography> {expanded !== 'panel2' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}How long does the course take?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit.
+            Only Two weeks
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion sx={{ backgroundColor:expanded == 'panel3' && '#F4F9FF', }} expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography> {expanded !== 'panel3' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} The price of the courses</Typography>
+          <Typography> {expanded !== 'panel3' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}What do we need to learn for the course?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. 
+          <Typography className='flex flex-col' >
+            <span>1. Smart phone or computer</span>
+            <span>2. internet connection</span>
+            <span>3. 3500ETB only for payment </span>
+
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion  sx={{ backgroundColor:expanded == 'panel4' && '#F4F9FF', }} expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
         <AccordionSummary aria-controls="panel4d-content" id="panel4d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography>{expanded !== 'panel4' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Is there both online and inperson course</Typography>
+          <Typography>{expanded !== 'panel4' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Where and how can I register?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. 
+          <Typography className='flex flex-col'>
+          <span>1. Inperson - Addis Ababa Bole Medhinalem Alem dessu Bldg, 6th floor 607A</span>
+            <span>2.Online - using our website</span>
+            <span>3.By calling 0988246119 or 0954265503 </span>
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion sx={{ backgroundColor:expanded == 'panel5' && '#F4F9FF', }} expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
         <AccordionSummary aria-controls="panel5d-content" id="panel5d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography>{expanded !== 'panel5' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Who Can apply for the courses</Typography>
+          <Typography>{expanded !== 'panel5' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Is the course online or in person</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. 
+            It is online course so you can learn it anywhere you are and want.
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion sx={{ backgroundColor:expanded == 'panel6' && '#F4F9FF', }} expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
+      {/* <Accordion sx={{ backgroundColor:expanded == 'panel6' && '#F4F9FF', }} expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
         <AccordionSummary aria-controls="panel6d-content" id="panel6d-header"  expandIcon={<ExpandMoreIcon />}>
           <Typography>{expanded !== 'panel6' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Is there discounts ?</Typography>
         </AccordionSummary>
@@ -386,7 +380,7 @@ function Home() {
             sit amet, consectetur adipiscing elit. 
           </Typography>
         </AccordionDetails>
-      </Accordion>
+      </Accordion> */}
       </div>
         </div>
         <div className=' '>
