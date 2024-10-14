@@ -3,7 +3,7 @@ const express=require('express')
 const routes=express.Router()
 
 
-routes.get('/',Login)
+routes.post('/',Login)
 routes.post('/',Signup)
 routes.delete('/:id',deleteUser)
 

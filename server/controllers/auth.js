@@ -29,10 +29,10 @@ const Login=async(req,res)=>{
         const {email,password}=req.body
         const user=await User.findOne({email})
 
-        if(!user) return res.status(400).send('email doesnt exist')
+        if(!user) return res.status(400).send('Login email does not exist')
         const matched= await bcrypt.compare(password,user.password)  
 
-        if(!matched) return res.status(400).send('email or passord incorrect')
+        if(!matched) return res.status(400).send('email or password is incorrect')
          res.status(200).json({msg:'sucessfully login',user})
       
      }catch(error){
