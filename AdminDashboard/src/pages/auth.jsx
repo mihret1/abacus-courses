@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { jwtDecode } from "jwt-decode";
 
 
 function Auth() {
@@ -13,6 +14,17 @@ function Auth() {
   const [errorMessage,setErrorMessage]=useState('')
   const navigate=useNavigate()
 
+  useEffect(()=>{
+    const token=localStorage.getItem('token')
+    // const decode=jwtDecode(token)
+     if(token){
+      const decode=jwtDecode(token)
+      if(decode){  
+            navigate('/')
+      }
+     }
+  },[navigate])
+
   const signUp=async(e)=>{
     e.preventDefault()
     setUserField(false)
@@ -24,7 +36,8 @@ function Auth() {
         setUserField(true)
         return
       }
-      const {data}=await axios.post('http://localhost:1000/user',{fullname:name,email,password})
+      const {data}=await axios.post('http://localhost:1000/user/signup',{fullname:name,email,password})
+      localStorage.setItem('token',data.token)
       console.log(data)
       setName('')
       setEmail('')
@@ -39,6 +52,7 @@ function Auth() {
     }
 
   }
+  
   const signIn=async(e)=>{
     e.preventDefault()
     setUserField(false)
@@ -51,7 +65,9 @@ function Auth() {
         setUserField(true)
         return
       }
-      const {data}=await axios.post('http://localhost:1000/user',{email,password})
+      const {data }=await axios.post('http://localhost:1000/user/login',{email,password},)
+      localStorage.setItem('token',data.token)
+      
       console.log(data)
       setEmail('')
       setPassword('')

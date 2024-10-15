@@ -1,9 +1,13 @@
+import axios from 'axios'
 import React from 'react'
 
-function Home() {
+function Home () {
+
+  const {data}= axios.get('')
+  
   return (
     <div>
-        home
+        home sweet home
         
     </div>
   )

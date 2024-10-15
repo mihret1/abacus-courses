@@ -3,8 +3,9 @@ const express=require('express')
 const routes=express.Router()
 
 
-routes.post('/',Login)
-routes.post('/',Signup)
+routes.post('/login',Login)
+routes.post('/signup',Signup)
 routes.delete('/:id',deleteUser)
+
 
 module.exports=routes
