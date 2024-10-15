@@ -15,7 +15,12 @@ function Home () {
     }
     getResult()
 
-  },[])
+  },[students])
+
+  const handleDelete=async(_id)=>{
+     const {data}=await axios.delete(`http://localhost:1000/student/${_id}`)
+     console.log(data)
+  }
 
 
   return (
@@ -41,7 +46,7 @@ function Home () {
                         </div> 
                         <div className='flex gap-10 py-2'>
                           <button className='bg-blue-400 px-3 py-1 rounded-md font-semibold'>Update</button>
-                          <button className='bg-red-400 px-3 py-1 rounded-md  font-semibold'>Delete</button>
+                          <button onClick={()=>handleDelete(item._id)} className='bg-red-400 px-3 py-1 rounded-md  font-semibold'>Delete</button>
                         </div>
                     </div>
                  </div>
