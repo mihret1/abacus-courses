@@ -4,6 +4,7 @@ import Auth from './pages/auth'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
+import Interested from './pages/interested';
 
 
 
@@ -72,6 +73,8 @@ export default function App() {
        <Routes>
           <Route exact={true} path='/' element={<Home />} />
           <Route path='/auth' element={<Auth/>} />
+          <Route path='/interested' element={<Interested />} />
+
        </Routes>
       
        </AppWrapper>
