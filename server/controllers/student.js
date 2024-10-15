@@ -30,6 +30,7 @@ const getStudents=async(req,res)=>{
 }
 
 
+
 const getOneStudent=async(req,res)=>{
     try{
         const {id}=req.params
@@ -46,7 +47,7 @@ const getOneStudent=async(req,res)=>{
 const deleteStudent=async(req,res)=>{
     try{
       const student=  await Student.findByIdAndDelete(req.params.id)
-      if(!student) return res.status(400).send('faild')
+      if(!student) return res.status(400).send('failed')
       res.status(200).json({msg:'deleted', student})
         
     }catch(error){

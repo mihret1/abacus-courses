@@ -24,8 +24,7 @@ const Signup=async(req,res)=>{
     }catch(error){
        res.send(error)
     }
-  
-    
+
 
 }
 
