@@ -6,12 +6,16 @@ const studentSchema = new mongoose.Schema({
     fullname:String,
     account:String,
     reciept:String,
-    status:{
+    statu:{
       default:'inprogress',
       type:String
     }
   },{timestamps:true}) 
 
+
   
 const studentModel=mongoose.model('Student',studentSchema)
 module.exports=studentModel
+
+
+

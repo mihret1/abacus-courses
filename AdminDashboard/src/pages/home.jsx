@@ -4,6 +4,9 @@ import img1 from '../asset/co3.jpg'
 
 function Home () {
   const [students,setStudents]=useState([])
+  const [statuss,setStatus]=useState('')
+  const [updateIt,setUpdateIt]=useState('')
+
   useEffect(()=>{
 
     const getResult=async()=>{
@@ -22,6 +25,17 @@ function Home () {
      console.log(data)
   }
 
+  const handleUpdate=async(_id,e)=>{
+    e.preventDefault()
+   try{ const {data}=await axios.put(`http://localhost:1000/student/${_id}`,{statu:statuss})
+    console.log(data)
+    setStatus('')
+    setUpdateIt('')}
+    catch(error){
+      console.log(error)
+    }
+  }
+
 
   return (
     <div>
@@ -38,14 +52,27 @@ function Home () {
                         <div className='flex gap-3 items-center'>  <span className='text-xl font-serif'>Name:</span><span className='text-xl'>{item.fullname}</span></div> 
                         <div className='flex gap-3 items-center'>  <span className='text-xl font-serif'>Phone number:</span><span className='text-xl'>{item.phone}</span></div> 
                         <div className='flex gap-3 items-center'>  <span className='text-xl font-serif'>Account number:</span><span className='text-xl'>{item.account}</span></div> 
-                        <div className='flex gap-3 items-center'>  <span className='text-xl font-serif'>Status:</span><span className='text-xl'>{item.status}</span></div> 
+                        <div className='flex gap-3 items-center'>  <span className='text-xl font-serif'>Status:</span><span className='text-xl'>{item.statu}</span></div> 
 
                         <div className='flex flex-col'> 
                           <span className='text-xl font-serif'>Reciept:</span>
                           <img className='w-[500px] max-xs:w-[340px]  max-xs:h-[200px] h-[250px]' src={item.reciept}/>
                         </div> 
+                        
+                       {(updateIt ===item._id )&& <form onSubmit={(e)=>handleUpdate(item._id,e)} className=' flex py-2 gap-2'>
+                            <span className='text-xl'>Update Progress:</span> 
+                            <select value={statuss} onChange={(e)=>setStatus(e.target.value)} className='border-2 px-2 py-1 '> 
+                              <option value='inprogress'>inprogress</option>
+                              <option value='completed'>completed</option>
+                            </select>
+                            <button 
+                            type='submit'
+                            // onClick={()=>handleUpdate(item._id)}
+                             className='bg-blue-400 px-3 py-1 rounded-md font-semibold'>Done</button>
+                        </form>}
+
                         <div className='flex gap-10 py-2'>
-                          <button className='bg-blue-400 px-3 py-1 rounded-md font-semibold'>Update</button>
+                          <button onClick={()=>{setUpdateIt(item._id)}} className='bg-blue-400 px-3 py-1 rounded-md font-semibold'>Update</button>
                           <button onClick={()=>handleDelete(item._id)} className='bg-red-400 px-3 py-1 rounded-md  font-semibold'>Delete</button>
                         </div>
                     </div>
@@ -53,9 +80,7 @@ function Home () {
               ))}
               
         </div>
-        {students.map((item)=>(
-         <div key={item.id}> {item.phone}</div> 
-        ))}
+       
     </div>
   )
 }
