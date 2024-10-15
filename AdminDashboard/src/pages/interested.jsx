@@ -11,7 +11,17 @@ function Interested () {
     }
     getResult()
 
-  },[])
+  },[students])
+
+  const handleDelete=async(_id)=>{
+    try{
+      const {data}=await axios.delete(`http://localhost:1000/interested/${_id}`)
+      console.log(data)
+    }catch(error){
+      console.log(error)
+    }
+
+  }
 
 
   return (
@@ -29,7 +39,7 @@ function Interested () {
                         <div className='flex gap-3 items-center'>  <span className='text-xl font-serif'>Name:</span><span className='text-xl'>{item.fullname}</span></div> 
                         <div className='flex gap-3 items-center'>  <span className='text-xl font-serif'>Phone number:</span><span className='text-xl'>{item.phoneNumber}</span></div> 
                         <div className='flex gap-3 items-center'>  <span className='text-xl font-serif'>Email:</span><span className='text-xl'>{item.email}</span></div> 
-                       
+                        <button onClick={()=>handleDelete(item._id)} className='px-3 text-white w-28 py-1 bg-red-500'>Delete</button>
                     </div>
                  </div>
               ))}
