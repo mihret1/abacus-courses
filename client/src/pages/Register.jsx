@@ -167,9 +167,12 @@ import FileBase from 'react-file-base64';
 import Footer from '../components/Footer';
 import emailjs from '@emailjs/browser';
 import imageCompression from 'browser-image-compression';
-
+import ClearIcon from '@mui/icons-material/Clear';
 import CircularProgress from '@mui/material/CircularProgress'; // MUI Loading Spinner
 import axios from 'axios'
+import { IconButton } from '@mui/material'
+import CheckIcon from '@mui/icons-material/Check';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 function Register() {
     const [fullname,SetFullname]=useState('')
@@ -183,6 +186,9 @@ function Register() {
    const [backendSucess,setBackendSucess]=useState(false)
    const [backendError,setBackendError]=useState(false)
 
+    const [messageControl,setMessageControl]=useState(false)
+    const [errorMessageControl,setErrorMessageControl]=useState(false)
+    const [interstedMessageControl,setInterestedMessageControl]=useState(false)
 
    const handleFileUpload = async (file) => {
     try {
@@ -215,6 +221,7 @@ function Register() {
      const  serviceId='service_3ja3tcc'
      const  publicKey='EhN2wmPgm4E7rWzdO'
      const  templateId='template_2dmvazj'
+
      const templateParams={
           from_name : fullname,
           from_email:fullname,
@@ -385,10 +392,15 @@ function Register() {
                         } 
 
 
-                        { (errorr || backendError) && <p className='text-center text-xl font-semibol text-red-500'>Unable to register, try again!</p>
+                        { ((errorr || backendError) && !errorMessageControl) && <p className='text-center text-xl font-semibol text-red-700'>
+                         <div  className=' flex justify-between w-full bg-[#FDEDED] px-3 py-3 text-lg ' >  <div> <ErrorOutlineIcon /> Unable to register, try again!  </div>   <button onClick={()=>setErrorMessageControl(true)}><ClearIcon /> </button> </div>
+                          </p>
                         } 
 
-                         { (sucesss && backendSucess)  && <p className='text-center  font-semibol text-green-500'>Successfully register,We will review the payment and we will send you the class room telegram link</p>
+                         { ((sucesss && backendSucess) && !messageControl)  && <p className='text-center  font-semibold text-green-800'>
+                          {/* Successfully register,We will review the payment and we will send you the class room telegram link */}
+                             <div className=' flex justify-between w-full bg-[#EDF7ED] px-3 py-3 text-lg '><div><CheckIcon /> Successfully register ,We will review contact you</div>   <button onClick={()=>setMessageControl(true)}><ClearIcon /> </button>  </div>  
+                          </p>
                         }            
              </form>
                           

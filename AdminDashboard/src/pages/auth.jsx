@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
-
+import logo from '../asset/logoo.jpg'
 
 function Auth() {
   const [isRegister,setIsregister]=useState(true)
@@ -36,13 +36,14 @@ function Auth() {
         setUserField(true)
         return
       }
-      const {data}=await axios.post('http://localhost:1000/user/signup',{fullname:name,email,password})
+      const { data } = await axios.post('http://localhost:1000/user/signup',{fullname:name,email,password})
       localStorage.setItem('token',data.token)
       console.log(data)
       setName('')
       setEmail('')
       setPassword('')
       setErrorMessage('')
+      setError(false)
       navigate('/', { replace: true })
     }catch(error){
       
@@ -72,6 +73,7 @@ function Auth() {
       setEmail('')
       setPassword('')
       setErrorMessage('')
+      setError(false)
       navigate('/', { replace: true })
 
     }catch(error){
@@ -85,19 +87,23 @@ function Auth() {
  
  
   return (
-    <div className="  flex  justify-center items-center">
-        <form onSubmit={isRegister ? signIn : signUp} className="flex flex-col h-[600px]  w-[400px] gap-2 justify-center items-center">
-            <p className="text-xl text-gray-500">{isRegister ? 'Login' :'Register'} to dashborad</p>
+    <div className="  flex flex-col gap-3 justify-center items-center pt-10">
+          <img src={logo} className="w-32 h-32 rounded-full "/>
+         <p className="text-3xl font-bold  text-[#232d8d]">Eagle Training Center</p>
+        <form onSubmit={isRegister ? signIn : signUp} className=" flex flex-col h-[350px]  w-[400px] gap-2 justify-center items-center">
+            <p className="text-2xl text-[#232d8d] font-semibold">{isRegister ? 'Login' :'Register'} to dashborad</p>
             { !isRegister &&  <input value={name} onChange={(e)=>setName(e.target.value)} className="w-full h-12 border-2 p-2 outline-1 outline-blue-400"  placeholder="name" />
             }     
             <input value={email} onChange={(e)=>setEmail(e.target.value)}  className="w-full h-12 border-2 p-2 outline-1 outline-blue-400" placeholder="email"  />
             <input value={password} onChange={(e)=>setPassword(e.target.value)}  className="w-full h-12 border-2 p-2 outline-1 outline-blue-400"  placeholder="password"/>
-            <button type="submit" className="w-full h-10 bg-cyan-600 text-white hover:bg-cyan-900" >{isRegister ? 'Login' :'Register'}</button>
+            <button type="submit" className="w-full h-10 bg-cyan-600 text-white text-xl  hover:bg-cyan-900" >{isRegister ? 'Login' :'Register'}</button>
            {userField && <p className="text-red-500">Enter all field</p>}
            {/* {errorr &&<p>Failed, {isRegister ? 'check your informtion again':'unable to register, check ur info again'}</p>} */}
         
            {errorr && <p className="text-red-500">{errorMessage}</p>}
-           <p className=" py-2 ">{isRegister? 'you have no account?' :'have already account?'} <button type="button" onClick={()=>setIsregister((e)=>!e)} className="text-blue-500">{isRegister ? 'Register' :'Login'}</button></p>
+           {(errorr && !errorMessage ) && <p className="text-red-500"> Failed, try again</p>}
+
+           <p className=" py-2 text-[#11174b] font-semibold text-lg ">{isRegister? 'you have no account?' :'have already account?'} <button type="button" onClick={()=>setIsregister((e)=>!e)} className="text-cyan-600">{isRegister ? 'Register' :'Login'}</button></p>
 
         </form>
     </div>

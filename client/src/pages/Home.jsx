@@ -126,13 +126,13 @@ function Home() {
           
         {/* section one */}
         <div  className=''   style={{
-          // backgroundImage:`url(${banner})`,
-          // backgroundRepeat:'no-repeat',
-          // backgroundSize:'cover' 
+          backgroundImage:`url(${banner})`,
+          backgroundRepeat:'no-repeat',
+          backgroundSize:'cover' 
           }}>
               <Navbar />
-              <div className='homeOne    flex justify-center gap-7  pb-24 h-[100%] w-[100%] text-white text-bold pt-12 max-sm:pt-6'>
-                    
+              <div className='homeOne    flex flex-col items-center justify-center gap-5  pb-24 h-[100%] w-[100%] text-white text-bold pt-12 max-sm:pt-6'>
+                            <p className='bg-gradient-to-r from-pink-500  via-purple-500 to-pink-500 bg-clip-text text-transparent  text-[35px] font-bold text-center'>Introduction to Digital Marketing</p>
                            <iframe 
                             className='max-sm:w-[90%] sm:max-md:w-[80%] md:max-lg:w-[70%]  w-[65%]  h-[500px] max-sm:h-[270px] sm:max-mdd:[370px] rounded-xl'
                             loading="lazy" 
@@ -147,260 +147,308 @@ function Home() {
         </div>
   
          {/* section two */}
-         <div id="course" className='flex max-md:flex-col justify-center gap-10 max-mdd:gap-4 pt-24 px-2 mdd:px-16 '>
-                <div className='flex  justify-center items-center h-[380px] w-[650px] max-xs:w-[340px] xs:max-md:w-[90%]  '>
-                  <iframe 
-                        className='w-[100%] h-[100%] rounded-xl'
-                        loading="lazy" 
-                        title="Web Developement" 
-                        src="https://www.youtube.com/embed/RkmpVOTs7Es?si=itWVyqaoth8Q_r02" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" >
+         <div className='pt-24 ' id="course">
+            <p className='text-[36px] text-center font-bold py-5 bg-gradient-to-r from-pink-500   via-purple-500  to-pink-600  bg-clip-text text-transparent'>Digital Marketing Course </p>
+            <div  className='flex max-md:flex-col justify-center gap-10 max-mdd:gap-4 pt-5 px-2 mdd:px-16 '>
+                    <div className='flex  justify-center items-center h-[380px] w-[650px] max-xs:w-[340px] xs:max-md:w-[90%]  '>
+                      <iframe 
+                            className='w-[100%] h-[100%] rounded-xl'
+                            loading="lazy" 
+                            title="Web Developement" 
+                            src="https://www.youtube.com/embed/RkmpVOTs7Es?si=itWVyqaoth8Q_r02" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" >
 
-                   </iframe>
-                </div>
-                <div className='w-[700px] max-xs:w-[340px] xs:max-md:w-[90%]    flex flex-col gap-y-2 '>
-                    <p className='text-[40px] max-sm:text-2xl font-bold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>Course Outline</p>
-                  
-                    <div className='  flex flex-col '>
-                      <Accordion sx={{ backgroundColor:expanded == 'panel1' && '#F4F9FF', }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-                        <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
-                          <Typography>{expanded !== 'panel1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}Lecture</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails >
-
-                            <Accordion sx={{ backgroundColor:expanded == 'panell1' && '#F4F9FF', }} expanded={expandedInner === 'panell1'} onChange={handleInnerChange('panell1')}>
-                            <AccordionSummary  aria-controls="panell1d-content" id="panell1d-header"  expandIcon={<ExpandMoreIcon />}>
-                              <Typography>{expandedInner !== 'panell1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Facebbook</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails >
-                              <div className='flex flex-col'>
-                                  <span> 1. Introduction to Facebook</span>
-                                  <span>  2. Meta Business Suite</span>
-                                  <span>  3. How the Facebook Algorithm Work?</span>
-                                  <span> 4. Facebook Marketing </span>
-                                  <span> 5. Facebook Boost</span>
-                                  <span> 6. Facebook Ad Campaign Part One</span>
-                                  <span>  7. Facebook Ad Campaign Part Two</span>
-                              </div>
-                             </AccordionDetails>
-                            </Accordion>
-                            <Accordion sx={{ backgroundColor:expanded == 'panell2' && '#F4F9FF', }} expanded={expandedInner === 'panell2'} onChange={handleInnerChange('panell2')}>
-                              <AccordionSummary  aria-controls="panell2d-content" id="panell2d-header"  expandIcon={<ExpandMoreIcon />}>
-                                <Typography>{expandedInner !== 'panell2' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Instagram</Typography>
-                              </AccordionSummary>
-                            <AccordionDetails >
-                              <div className='flex flex-col'>
-                               <span> 1. Introduction to Instagram </span>
-                                <span>  2. Features of Instagram</span>
-                                <span>  3.How the Instagram Algorithm Work?</span>
-                                <span> 4.Instagram Marketing</span>
-                              </div>
-                          </AccordionDetails>
-                            </Accordion>
-                            <Accordion sx={{ backgroundColor:expanded == 'panell3' && '#F4F9FF', }} expanded={expandedInner === 'panell3'} onChange={handleInnerChange('panell3')}>
-                              <AccordionSummary  aria-controls="panell3d-content" id="panell3d-header"  expandIcon={<ExpandMoreIcon />}>
-                                 <Typography>{expandedInner !== 'panell3' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} TikTok</Typography>
-                              </AccordionSummary>
-                              <AccordionDetails >
-                                <div className='flex flex-col'>
-                                <span> 1. Introduction to Tik Tok </span>
-                                <span> 2. How the Tik Tok Algorithm Work?</span>
-                                <span>3.How To Grow Tik Tok Account?</span>
-                              </div>
-                          </AccordionDetails>
-                            </Accordion>
-                            <Accordion sx={{ backgroundColor:expanded == 'panell4' && '#F4F9FF', }} expanded={expandedInner === 'panell4'} onChange={handleInnerChange('panell4')}>
-                            <AccordionSummary  aria-controls="panell4d-content" id="panell4d-header"  expandIcon={<ExpandMoreIcon />}>
-                              <Typography>{expandedInner !== 'panell4' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} YouTube</Typography>
-                            </AccordionSummary>
-                            <AccordionDetails >
-                              <div className='flex flex-col'>
-                              <span> 1. Introduction to YouTube</span>
-                              <span> 2. How the YouTube Algorithms work? Part One</span>
-                                <span> 3. How the YouTube Algorithms work? Part Two</span>
-                                <span>4. How to grow YouTube Channel? Part One </span>
-                                <span> 5. How to grow YouTube Channel? Part Two</span>
-                              
-                              </div>
-                          </AccordionDetails>
-                            </Accordion>
-                            <Accordion sx={{ backgroundColor:expanded == 'panell5' && '#F4F9FF', }} expanded={expandedInner === 'panell5'} onChange={handleInnerChange('panell5')}>
-                              <AccordionSummary  aria-controls="panell5d-content" id="panell5d-header"  expandIcon={<ExpandMoreIcon />}>
-                                <Typography>{expandedInner !== 'panell5' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Q&A Live Session using Google Meet</Typography>
-                              </AccordionSummary>
-                              <AccordionDetails >
-                                <div className='flex flex-col'>
-                                  <span> 1. Facebook Q&A Live Session using Google Meet</span>
-                                  <span> 2. Instagram Q&A Live Session using Google Meet</span>
-                                  <span> 3. Tik Tok Q&A Live Session using Google Meet</span>
-                                  <span>4. YouTube Q&A Live Session using Google Meet</span>
-                                  
-                                </div>
-                          </AccordionDetails>
-                            </Accordion>
-
-
-
-
-                       </AccordionDetails>
-                      </Accordion>
-               
-                      <Accordion sx={{ backgroundColor:expanded == 'panel2' && '#F4F9FF', }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-                        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header"  expandIcon={<ExpandMoreIcon />}>
-                          <Typography> {expanded !== 'panel2' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}Quize</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                        <div className='flex flex-col'>
-                          <span> 1.Facebook quize (20%) </span>
-                          <span> 2.Instagram quize (20%)</span>
-                            <span>3.Tiktok quize (10%)</span>
-                            <span>4.Youtube quize (20%)</span>
-                            <span>5.Final Exam (50%)</span>
-                            
-                          </div>
-                        </AccordionDetails>
-                      </Accordion>
-                      <Accordion sx={{ backgroundColor:expanded == 'panel3' && '#F4F9FF', }} expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-                        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header"  expandIcon={<ExpandMoreIcon />}>
-                          <Typography> {expanded !== 'panel3' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Certeficate</Typography>
-                        </AccordionSummary>
-                      
-                      </Accordion>
-               
-                
+                      </iframe>
                     </div>
-                
-                </div>
-         </div>
-              
+                    <div className='w-[700px] max-xs:w-[340px] xs:max-md:w-[90%]    flex flex-col gap-y-2 '>
+                        <p className='text-3xl  max-sm:text-2xl font-bold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>Course Outline</p>
+                      
+                        <div className='  flex flex-col '>
+                          <Accordion sx={{ backgroundColor:expanded == 'panel1' && '#F4F9FF', }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                            <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
+                              <Typography>{expanded !== 'panel1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}Lecture</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails >
+
+                                <Accordion sx={{ backgroundColor:expanded == 'panell1' && '#F4F9FF', }} expanded={expandedInner === 'panell1'} onChange={handleInnerChange('panell1')}>
+                                <AccordionSummary  aria-controls="panell1d-content" id="panell1d-header"  expandIcon={<ExpandMoreIcon />}>
+                                  <Typography>{expandedInner !== 'panell1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Facebbook</Typography>
+                                </AccordionSummary>
+                                <AccordionDetails >
+                                  <div className='flex flex-col'>
+                                      <span> 1. Introduction to Facebook</span>
+                                      <span>  2. Meta Business Suite</span>
+                                      <span>  3. How the Facebook Algorithm Work?</span>
+                                      <span> 4. Facebook Marketing </span>
+                                      <span> 5. Facebook Boost</span>
+                                      <span> 6. Facebook Ad Campaign Part One</span>
+                                      <span>  7. Facebook Ad Campaign Part Two</span>
+                                  </div>
+                                </AccordionDetails>
+                                </Accordion>
+                                <Accordion sx={{ backgroundColor:expanded == 'panell2' && '#F4F9FF', }} expanded={expandedInner === 'panell2'} onChange={handleInnerChange('panell2')}>
+                                  <AccordionSummary  aria-controls="panell2d-content" id="panell2d-header"  expandIcon={<ExpandMoreIcon />}>
+                                    <Typography>{expandedInner !== 'panell2' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Instagram</Typography>
+                                  </AccordionSummary>
+                                <AccordionDetails >
+                                  <div className='flex flex-col'>
+                                  <span> 1. Introduction to Instagram </span>
+                                    <span>  2. Features of Instagram</span>
+                                    <span>  3.How the Instagram Algorithm Work?</span>
+                                    <span> 4.Instagram Marketing</span>
+                                  </div>
+                              </AccordionDetails>
+                                </Accordion>
+                                <Accordion sx={{ backgroundColor:expanded == 'panell3' && '#F4F9FF', }} expanded={expandedInner === 'panell3'} onChange={handleInnerChange('panell3')}>
+                                  <AccordionSummary  aria-controls="panell3d-content" id="panell3d-header"  expandIcon={<ExpandMoreIcon />}>
+                                    <Typography>{expandedInner !== 'panell3' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} TikTok</Typography>
+                                  </AccordionSummary>
+                                  <AccordionDetails >
+                                    <div className='flex flex-col'>
+                                    <span> 1. Introduction to Tik Tok </span>
+                                    <span> 2. How the Tik Tok Algorithm Work?</span>
+                                    <span>3.How To Grow Tik Tok Account?</span>
+                                  </div>
+                              </AccordionDetails>
+                                </Accordion>
+                                <Accordion sx={{ backgroundColor:expanded == 'panell4' && '#F4F9FF', }} expanded={expandedInner === 'panell4'} onChange={handleInnerChange('panell4')}>
+                                <AccordionSummary  aria-controls="panell4d-content" id="panell4d-header"  expandIcon={<ExpandMoreIcon />}>
+                                  <Typography>{expandedInner !== 'panell4' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} YouTube</Typography>
+                                </AccordionSummary>
+                                <AccordionDetails >
+                                  <div className='flex flex-col'>
+                                  <span> 1. Introduction to YouTube</span>
+                                  <span> 2. How the YouTube Algorithms work? Part One</span>
+                                    <span> 3. How the YouTube Algorithms work? Part Two</span>
+                                    <span>4. How to grow YouTube Channel? Part One </span>
+                                    <span> 5. How to grow YouTube Channel? Part Two</span>
+                                  
+                                  </div>
+                              </AccordionDetails>
+                                </Accordion>
+                                <Accordion sx={{ backgroundColor:expanded == 'panell5' && '#F4F9FF', }} expanded={expandedInner === 'panell5'} onChange={handleInnerChange('panell5')}>
+                                  <AccordionSummary  aria-controls="panell5d-content" id="panell5d-header"  expandIcon={<ExpandMoreIcon />}>
+                                    <Typography>{expandedInner !== 'panell5' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Q&A Live Session using Google Meet</Typography>
+                                  </AccordionSummary>
+                                  <AccordionDetails >
+                                    <div className='flex flex-col'>
+                                      <span> 1. Facebook Q&A Live Session using Google Meet</span>
+                                      <span> 2. Instagram Q&A Live Session using Google Meet</span>
+                                      <span> 3. Tik Tok Q&A Live Session using Google Meet</span>
+                                      <span>4. YouTube Q&A Live Session using Google Meet</span>
+                                      
+                                    </div>
+                              </AccordionDetails>
+                                </Accordion>
+
+
+
+
+                          </AccordionDetails>
+                          </Accordion>
+                  
+                          <Accordion sx={{ backgroundColor:expanded == 'panel2' && '#F4F9FF', }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                            <AccordionSummary aria-controls="panel2d-content" id="panel2d-header"  expandIcon={<ExpandMoreIcon />}>
+                              <Typography> {expanded !== 'panel2' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}Quiz</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                            <div className='flex flex-col'>
+                              <span> 1.Facebook quiz (10%) </span>
+                              <span> 2.Instagram quiz (10%)</span>
+                                <span>3.Tiktok quiz (10%)</span>
+                                <span>4.Youtube quiz (10%)</span>
+                                <span>5.Final Exam (100%)</span>
+                                
+                              </div>
+                            </AccordionDetails>
+                          </Accordion>
+                          <Accordion sx={{ backgroundColor:expanded == 'panel3' && '#F4F9FF', }} expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                            <AccordionSummary aria-controls="panel3d-content" id="panel3d-header"  expandIcon={<ExpandMoreIcon />}>
+                              <Typography> {expanded !== 'panel3' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Certeficate</Typography>
+                            </AccordionSummary>
+                          
+                          </Accordion>
+                  
+                    
+                        </div>
+                    
+                    </div>
+            </div>
+         </div>    
+
 
          {/* section three */}
          <Register />
             
+
           {/* section four */}
-        <div id='opportunity' className='flex max-sm:flex-col max-sm:items-center py-40 justify-center  sm:max-md:gap-5 max-md:px-4'>
-           <div className=' w-[350px] h-[400px] max-md:h-[350px] '>
-              <video
-                className='w-[100%] h-full' 
-                src={faq}
-                controls
-                autoPlay 
-                muted 
-                loop                 
-               >
-              </video>
-           </div>
-           <div className='flex flex-col max-sm:text-lg text-xl sm:pt-6 '>
-               <span className='text-2xl max-sm:text-center pb-2 md:text-3xl font-semibold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'> Work Opportunities for Learning Digital Marketing </span>
-               <span className='md:pl-5 '><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Online shopping  </span>
-               <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Paid Advertisement </span>
-               <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Upwork </span>
-               {/* <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Global Job Opportunities </span>
-               <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Data-Driven Decision Making </span>
-               <span className='md:pl-5'><TaskAltIcon  sx={{color:'#0B1546' ,fontSize:'31px' }}/>&nbsp; Room for Creative Innovation</span> */}
+          <div id='opportunity' className='py-40  flex flex-col'>
+             <p className='text-[36px] pb-10 text-center font-bold  bg-gradient-to-r from-[#0B1546]  via-purple-500  to-pink-600  bg-clip-text text-transparent'>Work Opportunities </p>
 
-           </div>
-          
+             <div className='flex max-md:flex-col max-md:items-center justify-center gap-10  px-2 mb-4'>
+                <div className=''>
+                  <video
+                  controls 
+                  src={faq}
+                  autoPlay 
+                  muted 
+                  loop 
 
-        </div>
+                  className='h-[450px] xs:w-[350px] '>
+
+                  </video>
+                </div>
+                <div className='w-[700px] max-xs:w-[340px] xs:max-md:w-[90%]    flex flex-col gap-y-2 '>
+                  <p className='text-[36px] max-sm:text-2xl font-bold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>for Learning Digital Marketing</p>
+                  <div className='  flex flex-col '>
+                  <Accordion sx={{ backgroundColor:expanded == 'panel1' && '#F4F9FF', }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
+                  <p className='text-xl'>{expanded !== 'panel1' ? <TaskAltIcon /> : <HighlightOffIcon />}&nbsp; Online shopping</p>
+                </AccordionSummary>
+                <AccordionDetails >
+                  <Typography>
+                  Digital marketing, which is changing many lives nowadays  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion sx={{ backgroundColor:expanded == 'panel2' && '#F4F9FF', }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                <AccordionSummary aria-controls="panel2d-content" id="panel2d-header"  expandIcon={<ExpandMoreIcon />}>
+                  <p className='text-xl'> {expanded !== 'panel2' ? <TaskAltIcon /> : <HighlightOffIcon />}&nbsp; Paid Advertisement</p>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography>
+                    Only Two weeks
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion sx={{ backgroundColor:expanded == 'panel3' && '#F4F9FF', }} expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                <AccordionSummary aria-controls="panel3d-content" id="panel3d-header"  expandIcon={<ExpandMoreIcon />}>
+                  <p className='text-xl'> {expanded !== 'panel3' ? <TaskAltIcon /> : <HighlightOffIcon />}&nbsp; Upwork </p>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography className='flex flex-col' >
+                    <span>1. Smart phone or computer</span>
+                    <span>2. internet connection</span>
+                    <span>3. 3500ETB only for payment </span>
+
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+              <Accordion  sx={{ backgroundColor:expanded == 'panel4' && '#F4F9FF', }} expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+                <AccordionSummary aria-controls="panel4d-content" id="panel4d-header"  expandIcon={<ExpandMoreIcon />}>
+                  <p className='text-xl'>{expanded !== 'panel4' ? <TaskAltIcon/> : <HighlightOffIcon />} &nbsp; Drop Shipping </p>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Typography className='flex flex-col'>
+                  <span>1. Inperson - Addis Ababa Bole Medhinalem Alem dessu Bldg, 6th floor 607A</span>
+                    <span>2.Online - using our website</span>
+                    <span>3.By calling 0988246119 or 0954265503 </span>
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            
+              
+              </div>
+                </div>
+       
+             </div>
         
+          </div>
         
-
-
+      
 
          {/* section five */}
-      <div id="faq" className='flex max-md:flex-col max-md:items-center justify-center gap-10  px-2 mb-4'>
-        
-        <div className='w-[700px] max-xs:w-[340px] xs:max-md:w-[90%]    flex flex-col gap-y-2 '>
-          <p className='text-[40px] max-sm:text-2xl font-bold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>Frequently Asked Question</p>
-          <div className='  flex flex-col '>
-          <Accordion sx={{ backgroundColor:expanded == 'panel1' && '#F4F9FF', }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography>{expanded !== 'panel1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}What course is teach by eagle training center</Typography>
-        </AccordionSummary>
-        <AccordionDetails >
-          <Typography>
-          Digital marketing, which is changing many lives nowadays  </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion sx={{ backgroundColor:expanded == 'panel2' && '#F4F9FF', }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-        <AccordionSummary aria-controls="panel2d-content" id="panel2d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography> {expanded !== 'panel2' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}How long does the course take?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Only Two weeks
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion sx={{ backgroundColor:expanded == 'panel3' && '#F4F9FF', }} expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
-        <AccordionSummary aria-controls="panel3d-content" id="panel3d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography> {expanded !== 'panel3' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}What do we need to learn for the course?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography className='flex flex-col' >
-            <span>1. Smart phone or computer</span>
-            <span>2. internet connection</span>
-            <span>3. 3500ETB only for payment </span>
+        <div id="faq" className='flex max-md:flex-col max-md:items-center justify-center gap-10  px-2 mb-4'>
+          
+          <div className='w-[700px] max-xs:w-[340px] xs:max-md:w-[90%]    flex flex-col gap-y-2 '>
+            <p className='text-[40px] max-sm:text-2xl font-bold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>Frequently Asked Question</p>
+            <div className='  flex flex-col '>
+            <Accordion sx={{ backgroundColor:expanded == 'panel1' && '#F4F9FF', }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+          <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
+            <Typography>{expanded !== 'panel1' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}What course is teach by eagle training center</Typography>
+          </AccordionSummary>
+          <AccordionDetails >
+            <Typography>
+            Digital marketing, which is changing many lives nowadays  </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion sx={{ backgroundColor:expanded == 'panel2' && '#F4F9FF', }} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+          <AccordionSummary aria-controls="panel2d-content" id="panel2d-header"  expandIcon={<ExpandMoreIcon />}>
+            <Typography> {expanded !== 'panel2' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}How long does the course take?</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Only Two weeks
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion sx={{ backgroundColor:expanded == 'panel3' && '#F4F9FF', }} expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+          <AccordionSummary aria-controls="panel3d-content" id="panel3d-header"  expandIcon={<ExpandMoreIcon />}>
+            <Typography> {expanded !== 'panel3' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />}What do we need to learn for the course?</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography className='flex flex-col' >
+              <span>1. Smart phone or computer</span>
+              <span>2. internet connection</span>
+              <span>3. 3500ETB only for payment </span>
 
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion  sx={{ backgroundColor:expanded == 'panel4' && '#F4F9FF', }} expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
-        <AccordionSummary aria-controls="panel4d-content" id="panel4d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography>{expanded !== 'panel4' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Where and how can I register?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography className='flex flex-col'>
-          <span>1. Inperson - Addis Ababa Bole Medhinalem Alem dessu Bldg, 6th floor 607A</span>
-            <span>2.Online - using our website</span>
-            <span>3.By calling 0988246119 or 0954265503 </span>
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion sx={{ backgroundColor:expanded == 'panel5' && '#F4F9FF', }} expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
-        <AccordionSummary aria-controls="panel5d-content" id="panel5d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography>{expanded !== 'panel5' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Is the course online or in person</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            It is online course so you can learn it anywhere you are and want.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      {/* <Accordion sx={{ backgroundColor:expanded == 'panel6' && '#F4F9FF', }} expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
-        <AccordionSummary aria-controls="panel6d-content" id="panel6d-header"  expandIcon={<ExpandMoreIcon />}>
-          <Typography>{expanded !== 'panel6' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Is there discounts ?</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
-            sit amet, consectetur adipiscing elit. 
-          </Typography>
-        </AccordionDetails>
-      </Accordion> */}
-      </div>
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion  sx={{ backgroundColor:expanded == 'panel4' && '#F4F9FF', }} expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
+          <AccordionSummary aria-controls="panel4d-content" id="panel4d-header"  expandIcon={<ExpandMoreIcon />}>
+            <Typography>{expanded !== 'panel4' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Where and how can I register?</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography className='flex flex-col'>
+            <span>1. Inperson - Addis Ababa Bole Medhinalem Alem dessu Bldg, 6th floor 607A</span>
+              <span>2.Online - using our website</span>
+              <span>3.By calling 0988246119 or 0954265503 </span>
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion sx={{ backgroundColor:expanded == 'panel5' && '#F4F9FF', }} expanded={expanded === 'panel5'} onChange={handleChange('panel5')}>
+          <AccordionSummary aria-controls="panel5d-content" id="panel5d-header"  expandIcon={<ExpandMoreIcon />}>
+            <Typography>{expanded !== 'panel5' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Is the course online or in person</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              It is online course so you can learn it anywhere you are and want.
+            </Typography>
+          </AccordionDetails>
+        </Accordion>
+        {/* <Accordion sx={{ backgroundColor:expanded == 'panel6' && '#F4F9FF', }} expanded={expanded === 'panel6'} onChange={handleChange('panel6')}>
+          <AccordionSummary aria-controls="panel6d-content" id="panel6d-header"  expandIcon={<ExpandMoreIcon />}>
+            <Typography>{expanded !== 'panel6' ? <ArrowCircleRightOutlinedIcon /> : <HighlightOffIcon />} Is there discounts ?</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+              malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum dolor
+              sit amet, consectetur adipiscing elit. 
+            </Typography>
+          </AccordionDetails>
+        </Accordion> */}
         </div>
-        <div className=' '>
-           <video
-           controls 
-           src={opportunity}
-           autoPlay 
-           muted 
-           loop 
+          </div>
+          <div className=' '>
+            <video
+            controls 
+            src={opportunity}
+            autoPlay 
+            muted 
+            loop 
 
-           className='h-[450px] xs:w-[350px] '
-           
-            >
+            className='h-[450px] xs:w-[350px] '
+            
+              >
 
-           </video>
+            </video>
+          </div>
         </div>
-      </div>
 
 
-          {/* section five */}
+          {/* section six */}
           <div id='interested' className='flex flex-col items-center pt-32 pb-5 gap-2 px-3'>
              
              <p className='text-3xl text-center font-semibold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>You want to learn and unable to do it, Signup  </p>
@@ -428,8 +476,8 @@ function Home() {
 
 
 
-      {/* footer */}
-      <Footer />
+          {/* footer */}
+          <Footer />
 
     </div>
   

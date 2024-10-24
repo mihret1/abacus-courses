@@ -28,7 +28,7 @@ function Interested () {
     <div>
       <div className='flex justify-between text-3xl text-white h-20 bg-cyan-600  items-center px-4'>
         <span> All Interested  Students</span>
-        <a href='/' className='text-xl hover:text-yellow-400 bg-gray-600 px-3 py-1 rounded-md'>Registerd students</a>
+        <a href='/student' className='text-xl hover:text-yellow-400 bg-gray-600 px-3 py-1 rounded-md'>Registerd students</a>
     </div>
         <div className='flex flex-col p-4 gap-3' >
               

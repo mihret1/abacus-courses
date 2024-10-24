@@ -1,10 +1,11 @@
 import { Route,Routes,BrowserRouter} from 'react-router-dom'
-import Home from './pages/home'
+import Student from './pages/students'
 import Auth from './pages/auth'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
 import Interested from './pages/interested';
+import Home from './pages/home';
 
 
 
@@ -74,6 +75,8 @@ export default function App() {
           <Route exact={true} path='/' element={<Home />} />
           <Route path='/auth' element={<Auth/>} />
           <Route path='/interested' element={<Interested />} />
+          <Route path='/student' element={<Student />} />
+
 
        </Routes>
       
