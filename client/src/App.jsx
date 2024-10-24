@@ -27,7 +27,7 @@ function App() {
             <Route  path='/mobile' element={<MobileDevelopment />} />
             <Route  path='/marketing' element={<Marketing />} /> */}
 
-            <Route  path='/auth' element={<Auth />} />
+            {/* <Route  path='/auth' element={<Auth />}  /> */}
 
 
 
