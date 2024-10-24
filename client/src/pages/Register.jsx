@@ -188,7 +188,6 @@ function Register() {
 
     const [messageControl,setMessageControl]=useState(false)
     const [errorMessageControl,setErrorMessageControl]=useState(false)
-    const [interstedMessageControl,setInterestedMessageControl]=useState(false)
 
    const handleFileUpload = async (file) => {
     try {
@@ -393,7 +392,9 @@ function Register() {
 
 
                         { ((errorr || backendError) && !errorMessageControl) && <p className='text-center text-xl font-semibol text-red-700'>
-                         <div  className=' flex justify-between w-full bg-[#FDEDED] px-3 py-3 text-lg ' >  <div> <ErrorOutlineIcon /> Unable to register, try again!  </div>   <button onClick={()=>setErrorMessageControl(true)}><ClearIcon /> </button> </div>
+                         <div  className=' flex justify-between w-full bg-[#FDEDED] px-3 py-3 text-lg ' >  <div> <ErrorOutlineIcon /> Unable to register, try again!  </div> 
+                           <button onClick={()=>setErrorMessageControl(true)}><ClearIcon /> </button>
+                            </div>
                           </p>
                         } 
 

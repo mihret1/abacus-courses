@@ -60,6 +60,9 @@ import faq from '../assets/opportunity.mp4'
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import axios from 'axios';
 import CircularProgress from '@mui/material/CircularProgress'; // MUI Loading Spinner
+import CheckIcon from '@mui/icons-material/Check';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import ClearIcon from '@mui/icons-material/Clear';
 
 function Home() {
 
@@ -74,6 +77,11 @@ function Home() {
   const [interestedError,setInterestedError]=useState(false)
   const [interesetdLoading,setInterestedLoading]=useState(false)
   const [interestedSucess,setInterestedSucess]=useState(false)
+  
+  const [interstedMessageControl,setInterestedMessageControl]=useState(false)
+  const [interstedErrorMessageControl,setInterestedErrorMessageControl]=useState(false)
+
+
 
   const handleInterestedRegisteration=async(e)=>{
      e. preventDefault()
@@ -99,6 +107,7 @@ function Home() {
       }catch(error){
         
       console.log(error)
+      setInterestedError(true)
       setInterestedField(false)
       setInterestedLoading(false)
       setInterestedSucess(false)
@@ -288,7 +297,17 @@ function Home() {
 
              <div className='flex max-md:flex-col max-md:items-center justify-center gap-10  px-2 mb-4'>
                 <div className=''>
-                  <video
+
+                    <iframe 
+                            className='h-[450px] xs:w-[310px] '
+                             loading="lazy" 
+                            title="Web Developement" 
+                            src="https://www.youtube.com/embed/uZTRKD6WZDQ?autoplay=1&mute=1&loop=1&playlist=uZTRKD6WZDQ" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" >
+
+                      </iframe>
+                  {/* <video
                   controls 
                   src={faq}
                   autoPlay 
@@ -297,10 +316,11 @@ function Home() {
 
                   className='h-[450px] xs:w-[350px] '>
 
-                  </video>
+                  </video> */}
                 </div>
+
                 <div className='w-[700px] max-xs:w-[340px] xs:max-md:w-[90%]    flex flex-col gap-y-2 '>
-                  <p className='text-[36px] max-sm:text-2xl font-bold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>for Learning Digital Marketing</p>
+                  <p className='text-[32px] max-sm:text-2xl font-bold bg-gradient-to-r from-[#0B1546] via-purple-500 to-pink-500 bg-clip-text text-transparent'>For Learning Digital Marketing</p>
                   <div className='  flex flex-col '>
                   <Accordion sx={{ backgroundColor:expanded == 'panel1' && '#F4F9FF', }} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                 <AccordionSummary  aria-controls="panel1d-content" id="panel1d-header"  expandIcon={<ExpandMoreIcon />}>
@@ -432,7 +452,16 @@ function Home() {
         </div>
           </div>
           <div className=' '>
-            <video
+                  <iframe 
+                            className='h-[450px] xs:w-[310px] '
+                             loading="lazy" 
+                            title="Web Developement" 
+                            src="https://www.youtube.com/embed/qsTUCnJ4no8?autoplay=1&mute=1&loop=1&playlist=qsTUCnJ4no8" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" >
+
+                      </iframe>
+            {/* <video
             controls 
             src={opportunity}
             autoPlay 
@@ -443,7 +472,7 @@ function Home() {
             
               >
 
-            </video>
+            </video> */}
           </div>
         </div>
 
@@ -468,9 +497,25 @@ function Home() {
                 className='border  text-xl text-white w-72 max-sm:w-48 py-2 bg-gradient-to-r from-[#0B1546]  to-pink-500 hover:bg-gradient-to-r hover:from-pink-500 hover:to-[#0B1546] '>
                   Signup
              </button>
-             <p className='text-center text-red-600'>{interesetdField && 'Enter All field'}</p>
-             {interestedError && <p className='text-center text-red-600'>Sorry, Unable to register</p>}
-             {interestedSucess && <p className='text-center text-green-600'>Nice!, You are registered</p>}
+             <p className='text-center text-red-600 text-lg'>{interesetdField && 'Enter All field'}</p>
+             
+             {(interestedError && !interstedErrorMessageControl) && <p className='text-center text-red-700 w-[500px] max-sm:w-[300p] '>
+               <div className='flex justify-between w-full bg-[#FDEDED] px-3 py-3 text-lg '>
+                  <div><ErrorOutlineIcon />  Sorry, Unable to register </div>
+                 <button onClick={()=>setInterestedErrorMessageControl(true)}><ClearIcon /> </button>
+               </div>
+            </p>
+            }
+             
+             {(interestedSucess && !interstedMessageControl) && <p className='text-center text-green-600 w-[500px] max-sm:w-[300p]'>
+              <div className='flex justify-between w-full bg-[#EDF7ED] px-3 py-3 text-lg'>
+                <div>
+                 <CheckIcon />  Nice!, You are registered
+                </div>
+                <button onClick={()=>setInterestedMessageControl(true)}><ClearIcon /> </button>
+
+              </div> 
+             </p>}
 
           </div>
 
