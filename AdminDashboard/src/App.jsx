@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
 import Interested from './pages/interested';
-import Home from './pages/home';
+import Home from './pages/Home';
 
 
 
