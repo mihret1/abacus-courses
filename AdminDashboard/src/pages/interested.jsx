@@ -113,13 +113,13 @@ function Interested () {
     
 
       <TableContainer  className='pt-12 '>
-          <Table  className=' '>
-            <TableHead className=''>
+          <Table>
+            <TableHead>
                 <TableRow >
-                   <TableCell sx={{ fontSize:'17px',fontWeight:'medium' }}>
+                   <TableCell sx={{ fontSize:'17px' }}>
                        
                     </TableCell>
-                    <TableCell sx={{ fontSize:'17px',fontWeight:'medium' }}>
+                    <TableCell sx={{ fontSize:'17px' }}>
                        FullName
                     </TableCell>
                     <TableCell sx={{ fontSize:'17px' }}>

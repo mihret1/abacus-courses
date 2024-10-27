@@ -3,9 +3,20 @@ import React, { useEffect, useState } from 'react'
 import img1 from '../asset/co3.jpg'
 import CommenPart from '../components/CommenPart'
 
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import { TablePagination } from '@mui/material';
 
 
-const StudentsPart=()=>{
+
+
+
+
+function Student () {
   const [students,setStudents]=useState([])
   const [statuss,setStatus]=useState('')
   const [updateIt,setUpdateIt]=useState('')
@@ -39,31 +50,43 @@ const StudentsPart=()=>{
     }
   }
 
-  return(
-    <div>
-    <div className='flex justify-between text-3xl text-white h-20 bg-cyan-600  items-center px-4'>
-   <span> All Registerd Students</span>
-   <a href='/interested' className='text-xl hover:text-yellow-400 bg-gray-600 px-3 py-1 rounded-md'>interested students</a>
-    </div>
-   <div className='flex flex-col p-4 gap-3' >
-         
-         {students.map((item,index)=>(
-            <div key={item.key} className='flex gap-3 border-2 rounded-lg p-3   '>
-               <div className='text-xl font-semibold'>{index+1}.</div>
-               <div className='flex flex-col gap-1  '>
-                   <div className='flex gap-3 items-center'>  <span className='text-xl font-serif'>Name:</span><span className='text-xl'>{item.fullname}</span></div> 
-                   <div className='flex gap-3 items-center'>  <span className='text-xl font-serif'>Phone number:</span><span className='text-xl'>{item.phone}</span></div> 
-                   <div className='flex gap-3 items-center'>  <span className='text-xl font-serif'>Account number:</span><span className='text-xl'>{item.account}</span></div> 
-                   <div className='flex gap-3 items-center'>  <span className='text-xl font-serif'>Status:</span><span className='text-xl'>{item.statu}</span></div> 
 
-                   <div className='flex flex-col'> 
-                     <span className='text-xl font-serif'>Reciept:</span>
-                     <img className='w-[500px] max-xs:w-[340px]  max-xs:h-[200px] h-[250px]' src={item.reciept}/>
-                   </div> 
-                   
-                  {(updateIt ===item._id )&& <form onSubmit={(e)=>handleUpdate(item._id,e)} className=' flex py-2 gap-2'>
-                       <span className='text-xl'>Update Progress:</span> 
+
+  return (
+   <CommenPart>
+
+
+      <TableContainer className='pt-12 '>
+        
+           <Table>
+             <TableHead>
+                <TableRow>
+                 <TableCell  sx={{ fontSize:'17px' }}></TableCell>
+                  <TableCell  sx={{ fontSize:'17px' }}>Name</TableCell>
+                  <TableCell sx={{ fontSize:'17px' }}>Phone</TableCell>
+                  <TableCell sx={{ fontSize:'17px' }}>Account Type</TableCell>
+                  <TableCell sx={{ fontSize:'17px' }}>Status</TableCell>
+                  <TableCell sx={{ fontSize:'17px' }}>Delete</TableCell>
+                  <TableCell sx={{ fontSize:'17px' }}>Edit</TableCell>
+
+                </TableRow>
+             </TableHead>
+             <TableBody>
+                {students?.map((item,index)=>(
+                   <TableRow key={item.key}>
+                      <TableCell>{index+1}</TableCell>
+                      <TableCell>{item.fullname}</TableCell>
+                      <TableCell>{item.phone}</TableCell>
+                      <TableCell>{item.account}</TableCell>
+                      <TableCell>{item.statu}</TableCell>
+                      <TableCell><button onClick={()=>handleDelete(item._id)} className='bg-red-400 px-3 py-1 rounded-md  font-semibold'>Delete</button>
+                      </TableCell>
+                      <TableCell>
+                        <button onClick={()=>{setUpdateIt(item._id)}} className='bg-blue-400 px-3 py-1 rounded-md font-semibold'>Update</button>
+                        {(updateIt ===item._id )&& <form onSubmit={(e)=>handleUpdate(item._id,e)} className=' flex py-2 gap-2'>
+                       <span className=''>Update Progress:</span> 
                        <select value={statuss} onChange={(e)=>setStatus(e.target.value)} className='border-2 px-2 py-1 '> 
+                         <option value=''>Select Status</option>
                          <option value='inprogress'>inprogress</option>
                          <option value='completed'>completed</option>
                        </select>
@@ -71,30 +94,15 @@ const StudentsPart=()=>{
                        type='submit'
                        // onClick={()=>handleUpdate(item._id)}
                         className='bg-blue-400 px-3 py-1 rounded-md font-semibold'>Done</button>
-                   </form>}
+                       </form>}
+                      </TableCell>
 
-                   <div className='flex gap-10 py-2'>
-                     <button onClick={()=>{setUpdateIt(item._id)}} className='bg-blue-400 px-3 py-1 rounded-md font-semibold'>Update</button>
-                     <button onClick={()=>handleDelete(item._id)} className='bg-red-400 px-3 py-1 rounded-md  font-semibold'>Delete</button>
-                   </div>
-               </div>
-            </div>
-         ))}
-         
-   </div>
-  
-    </div>  
-  )
-}
-
-
-
-function Student () {
-
-
-  return (
-   <CommenPart>
-      <StudentsPart />
+                   </TableRow>
+                ))}
+             </TableBody>
+           </Table>
+      </TableContainer>
+      
    </CommenPart>
   )
 }
