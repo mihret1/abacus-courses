@@ -12,6 +12,7 @@ function Auth() {
   const [errorr,setError]=useState(false)
   const [userField,setUserField]=useState(false)
   const [errorMessage,setErrorMessage]=useState('')
+  const [paswordControl, setPasswordControl]=useState(false)
   const navigate=useNavigate()
 
   useEffect(()=>{
@@ -30,10 +31,16 @@ function Auth() {
     setUserField(false)
     setError(false)
     setErrorMessage('')
+    setPasswordControl(false)
     try{
       
       if(!name || !email || !password){
         setUserField(true)
+        return
+      }
+
+      if(password?.length<6){
+        setPasswordControl(true)
         return
       }
       const { data } = await axios.post('http://localhost:1000/user/signup',{fullname:name,email,password})
@@ -59,6 +66,7 @@ function Auth() {
     setUserField(false)
     setError(false)
     setErrorMessage('')
+    setPasswordControl(false)
 
     try{
       
@@ -66,6 +74,11 @@ function Auth() {
         setUserField(true)
         return
       }
+      if(password.length<6){
+        setPasswordControl(true)
+        return
+      }
+      
       const {data }=await axios.post('http://localhost:1000/user/login',{email,password},)
       localStorage.setItem('token',data.token)
       
@@ -103,7 +116,7 @@ function Auth() {
         
            {errorr && <p className="text-red-500">{errorMessage}</p>}
            {(errorr && !errorMessage ) && <p className="text-red-500"> Failed, try again</p>}
-
+           {paswordControl && <p className="text-red-500">Password atleast should be 6 digit</p>}
            <p className=" py-2 pt-3  text-[#11174b] font-semibold text-lg ">{isRegister? 'you have no account?' :'have already account?'} <button type="button" onClick={()=>setIsregister((e)=>!e)} className="text-cyan-600">{isRegister ? 'Register' :'Login'}</button></p>
             { isRegister && <div className="w-full flex justify-between pt-4"> <span></span> <a href='' className="flex text-right text-cyan-600 text-lg">Forget Password ? </a>  </div>    }        </form>
     </div>
