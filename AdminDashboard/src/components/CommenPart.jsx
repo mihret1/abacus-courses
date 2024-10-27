@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../asset/logoo.jpg'
 import HomeIcon from '@mui/icons-material/Home';
 import SchoolIcon from '@mui/icons-material/School';
@@ -7,8 +7,22 @@ import CastForEducationIcon from '@mui/icons-material/CastForEducation';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import CreateIcon from '@mui/icons-material/Create';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
+import { jwtDecode } from "jwt-decode";
 
 function CommenPart({children}) {
+  const token=localStorage.getItem('token')
+  const [signedEmail,setSignedEmail]=useState('')
+  
+  useEffect(()=>{
+    if(token){
+      const decode=jwtDecode(token)
+      setSignedEmail(decode.email)
+    }
+  },[token])
+  
+ 
+  
+  
   return (
     <div className='flex max-md:flex-col  '>
      
@@ -34,7 +48,7 @@ function CommenPart({children}) {
       <div className='w-[80%] max-md:w-[100%]'>
           <div className='max-md:hidden flex  items-center px-8 pt-3 justify-between w-full '>
              <div className='text-[21px] text-gray-600 font-semibold '>Admin Dashboard</div>
-             <div className='text-lg text-gray-700 font-semibold'>mihlet2@gmail.com</div>
+             <div className='text-lg text-gray-700 font-semibold'>{signedEmail}</div>
           </div>
           <div className=''>
              {children}

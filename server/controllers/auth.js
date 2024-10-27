@@ -17,7 +17,7 @@ const Signup=async(req,res)=>{
         const hashedPassword= await bcrypt.hash(password,salt)
 
         const user=await User.create({fullname,email,password:hashedPassword})
-        const token=await jwt.sign({id:user._id,email:user.email},'eagle',{expiresIn:180})
+        const token=await jwt.sign({id:user._id,email:user.email},'eagle',{expiresIn:240})
         res.status(200).json({msg:'successefuly registerd',user,token})
 
         
@@ -37,7 +37,7 @@ const Login=async(req,res)=>{
         const matched= await bcrypt.compare(password,user.password)  
 
         if(!matched) return res.status(400).send('email or password is incorrect')
-         const token= await jwt.sign({id:user._id,email:user.email},'eagle',{expiresIn:180})
+         const token= await jwt.sign({id:user._id,email:user.email},'eagle',{expiresIn:240})
          res.status(200).json({msg:'sucessfully login',user,token})
       
      }catch(error){
