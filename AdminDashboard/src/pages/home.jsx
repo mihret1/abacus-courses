@@ -8,7 +8,9 @@
 // import CreateIcon from '@mui/icons-material/Create';
 // import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 
+import { useEffect, useState } from "react";
 import CommenPart from "../components/CommenPart";
+import axios from "axios";
 
 // function Home() {
 //   return (
@@ -56,13 +58,41 @@ import CommenPart from "../components/CommenPart";
 // export default Home
 
 const Home=()=>{
+  const [interested,setInterested]=useState(null)
+  const [students,setStudents]=useState(null)
+
+  useEffect(()=>{
+    const getStudents=async()=>{
+      try{
+        const {data}=await axios.get('http://localhost:1000/student') 
+        setStudents(data)
+      }catch(error){console.log(error)}
+     
+    }
+
+    const getInterested=async()=>{
+      try{
+        const {data}=await axios.get('http://localhost:1000/interested') 
+        setInterested(data)
+      }catch(error){console.log(error)}
+     
+    }
+
+    getStudents()
+    getInterested()
+  },[students,interested])
   return(
     <>
       <CommenPart >
           <div className='px-8 py-4 max-md:px-1'>
               <div className='bg-white flex max-sm:flex-col gap-4 py-3'>
-                 <div className='  bg-red-500 h-48 w-80  shadow-md flex justify-center items-center text-2xl font-semibold text-white'>Part two</div>
-                 <div className='bg-blue-500 h-48 w-80 shadow-md flex justify-center items-center text-2xl font-semibold text-white'>Part one</div>
+                 <div className=' text-lg bg-red-500 h-48 w-80  shadow-md flex flex-col justify-center items-center font-semibold text-white'>
+                    
+                    <p className="text-center text-2xl">{students?.length} + Students</p>
+                </div>
+                 <div className='bg-blue-500 h-48 w-80 shadow-md flex flex-col justify-center items-center text-2xl font-semibold text-white'>
+                 <p className="text-center text-2xl">{interested?.length} + Interested Students</p>
+                 </div>
                </div>
           </div>
       </CommenPart>

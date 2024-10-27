@@ -80,7 +80,7 @@ function Student () {
            <Table>
              <TableHead>
                 <TableRow>
-                 <TableCell  sx={{ fontSize:'17px' }}></TableCell>
+                 <TableCell  sx={{ fontSize:'17px' }}> Total={students.length}</TableCell>
                   <TableCell  sx={{ fontSize:'17px' }}>Name</TableCell>
                   <TableCell sx={{ fontSize:'17px' }}>Phone</TableCell>
                   <TableCell sx={{ fontSize:'17px' }}>Account Type</TableCell>
@@ -102,7 +102,7 @@ function Student () {
                       <TableCell>
                        <button onClick={()=>togglePopup(item.reciept)}> <img src={item.reciept} className='w-8 h-7 rounded-lg'/></button> 
                         {isOpen&& selectedImage &&  (
-                            <div className="fixed top-0 left-0 w-full overflow-y-scroll h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
+                            <div className="fixed top-0 left-0 w-full overflow-scroll  h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
                             <div className="bg-white p-6 rounded-lg shadow-lg px-[5%] mx-20 overflow-y-scroll">
                                 <img src={selectedImage} />
                                 <button

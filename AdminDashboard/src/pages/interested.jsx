@@ -119,7 +119,7 @@ function Interested () {
             <TableHead>
                 <TableRow >
                    <TableCell sx={{ fontSize:'17px' }}>
-                       
+                       Total={students.length}
                     </TableCell>
                     <TableCell sx={{ fontSize:'17px' }}>
                        FullName
