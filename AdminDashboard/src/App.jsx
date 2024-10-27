@@ -11,9 +11,9 @@ import Home from './pages/Home';
 
 const AppWrapper=({children})=>{
     const navigate=useNavigate()
+    const token=localStorage.getItem('token')
 
   useEffect(()=>{
-    const token=localStorage.getItem('token')
 
      if(token){
       try{
@@ -34,7 +34,7 @@ const AppWrapper=({children})=>{
 
      }
 
-  },[navigate])
+  },[navigate,token])
   return(<>{children}</>)
   
 }

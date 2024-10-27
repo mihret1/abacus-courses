@@ -8,11 +8,13 @@ import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import CreateIcon from '@mui/icons-material/Create';
 import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 import { jwtDecode } from "jwt-decode";
+import { useNavigate } from 'react-router-dom';
 
 function CommenPart({children}) {
   const token=localStorage.getItem('token')
   const [signedEmail,setSignedEmail]=useState('')
-  
+  const navigate=useNavigate()
+
   useEffect(()=>{
     if(token){
       const decode=jwtDecode(token)
@@ -20,7 +22,13 @@ function CommenPart({children}) {
     }
   },[token])
   
- 
+  const handleLogout=()=>{
+    if(token){
+      localStorage.removeItem('token')
+      navigate('/auth',{replace:true})
+      
+    }
+  }
   
   
   return (
@@ -28,7 +36,11 @@ function CommenPart({children}) {
      
       <div className='w-[300px] md:h-[650px] max-md:h-[400px] md:max-lg:w-[190px]  bg-[#000D1D] flex flex-col gap-3'>
            <div className='flex items-center md:max-lg:flex-col md:pb-8  pt-5 '><img src={logo}  className='w-16 h-14 rounded-full'/><span className='text-white text-xl md:max-lg:text-lg font-bold'>Eagle Traning center</span> </div>
-           <div className='md:hidden text-lg text-slate-200 px-4 pb-8'>mihlet2@gmail.com</div>
+           <div className='md:hidden text-lg text-slate-200 px-4 pb-8 flex flex-col gap-2'>
+            {signedEmail}
+            <button onClick={handleLogout} className='text-white bg-[#253f63] px-3 '>Logout</button>
+
+            </div>
 
            <a href='/' className='flex items-center  justify-between  px-5 text-lg font-semibold text-slate-200 '>
               <div className='flex items-center gap-2 '><HomeIcon /> <span> Dashboard </span></div>
@@ -48,7 +60,10 @@ function CommenPart({children}) {
       <div className='w-[80%] max-md:w-[100%]'>
           <div className='max-md:hidden flex  items-center px-8 pt-3 justify-between w-full '>
              <div className='text-[21px] text-gray-600 font-semibold '>Admin Dashboard</div>
-             <div className='text-lg text-gray-700 font-semibold'>{signedEmail}</div>
+             <div className='text-lg text-gray-700 font-semibold flex gap-3 '>
+              {signedEmail} 
+              <button onClick={handleLogout} className='text-white bg-[#253f63] px-3 '>Logout</button>
+             </div>
           </div>
           <div className=''>
              {children}

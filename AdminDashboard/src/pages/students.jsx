@@ -100,7 +100,7 @@ function Student () {
                       <TableCell>{item.account}</TableCell>
                       <TableCell>{item.statu}</TableCell>
                       <TableCell>
-                       <button onClick={()=>togglePopup(item.reciept)}> <img src={item.reciept} className='w-8 h-7 rounded-lg'/></button> 
+                       <button onClick={()=>togglePopup(item.reciept)}> <img src={item.reciept} className='w-8 h-7 rounded-md'/></button> 
                         {isOpen&& selectedImage &&  (
                             <div className="fixed top-0 left-0 w-full overflow-scroll  h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
                             <div className="bg-white p-6 rounded-lg shadow-lg px-[5%] mx-20 overflow-y-scroll">
@@ -116,10 +116,10 @@ function Student () {
                    )}
                    </TableCell>
                       <TableCell>
-                        <button onClick={()=>handleDelete(item._id)} className='bg-red-400 px-3 py-1 rounded-md  font-semibold'>Delete</button>
+                        <button onClick={()=>handleDelete(item._id)} className='bg-red-400 px-3 py-1 rounded-md  font-bold text-white'>Delete</button>
                       </TableCell>
                       <TableCell>
-                        <button onClick={()=>{setUpdateIt(item._id)}} className='bg-blue-400 px-3 py-1 rounded-md font-semibold'>Update</button>
+                        <button onClick={()=>{setUpdateIt(item._id)}} className='bg-blue-400 px-3 py-1 rounded-md font-bold text-white'>Update</button>
                         {(updateIt ===item._id )&& <form onSubmit={(e)=>handleUpdate(item._id,e)} className=' flex py-2 gap-2'>
                        <span className=''>Update Progress:</span> 
                        <select value={statuss} onChange={(e)=>setStatus(e.target.value)} className='border-2 px-2 py-1 '> 
