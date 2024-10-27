@@ -21,6 +21,20 @@ function Student () {
   const [statuss,setStatus]=useState('')
   const [updateIt,setUpdateIt]=useState('')
 
+
+  const [pg, setpg] = useState(0); 
+  const [rpg, setrpg] = useState(7); 
+
+  function handleChangePage(event, newpage) { 
+        setpg(newpage); 
+    } 
+
+  function handleChangeRowsPerPage(event) { 
+        setrpg(parseInt(event.target.value, 10)); 
+        setpg(0); 
+    } 
+
+
   useEffect(()=>{
 
     const getResult=async()=>{
@@ -49,8 +63,13 @@ function Student () {
       console.log(error)
     }
   }
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
-
+  const togglePopup = (imageSrc) => {
+    setSelectedImage(imageSrc);
+    setIsOpen(!isOpen);
+  }
 
   return (
    <CommenPart>
@@ -66,20 +85,38 @@ function Student () {
                   <TableCell sx={{ fontSize:'17px' }}>Phone</TableCell>
                   <TableCell sx={{ fontSize:'17px' }}>Account Type</TableCell>
                   <TableCell sx={{ fontSize:'17px' }}>Status</TableCell>
+                  <TableCell sx={{ fontSize:'17px' }}>Reciept</TableCell>
                   <TableCell sx={{ fontSize:'17px' }}>Delete</TableCell>
                   <TableCell sx={{ fontSize:'17px' }}>Edit</TableCell>
 
                 </TableRow>
              </TableHead>
              <TableBody>
-                {students?.map((item,index)=>(
-                   <TableRow key={item.key}>
+                {students?.slice(pg * rpg, pg * rpg + rpg).map((item,index)=>(
+                   <TableRow key={item.key} className='hover:bg-gray-200'>
                       <TableCell>{index+1}</TableCell>
                       <TableCell>{item.fullname}</TableCell>
                       <TableCell>{item.phone}</TableCell>
                       <TableCell>{item.account}</TableCell>
                       <TableCell>{item.statu}</TableCell>
-                      <TableCell><button onClick={()=>handleDelete(item._id)} className='bg-red-400 px-3 py-1 rounded-md  font-semibold'>Delete</button>
+                      <TableCell>
+                       <button onClick={()=>togglePopup(item.reciept)}> <img src={item.reciept} className='w-8 h-7 rounded-lg'/></button> 
+                        {isOpen&& selectedImage &&  (
+                            <div className="fixed top-0 left-0 w-full overflow-y-scroll h-full flex items-center justify-center bg-gray-800 bg-opacity-50">
+                            <div className="bg-white p-6 rounded-lg shadow-lg px-[5%] mx-20 overflow-y-scroll">
+                                <img src={selectedImage} />
+                                <button
+                                onClick={()=>togglePopup(item.reciept)}
+                                className="mt-4 bg-red-500 text-white py-2 px-4 rounded"
+                                >
+                                Close
+                                </button>
+                            </div>
+                            </div>
+                   )}
+                   </TableCell>
+                      <TableCell>
+                        <button onClick={()=>handleDelete(item._id)} className='bg-red-400 px-3 py-1 rounded-md  font-semibold'>Delete</button>
                       </TableCell>
                       <TableCell>
                         <button onClick={()=>{setUpdateIt(item._id)}} className='bg-blue-400 px-3 py-1 rounded-md font-semibold'>Update</button>
@@ -102,6 +139,16 @@ function Student () {
              </TableBody>
            </Table>
       </TableContainer>
+      <TablePagination
+       rowsPerPageOptions={[5, 8, 25,50,100]}
+       count={students.length}
+       rowsPerPage={rpg} 
+       page={pg} 
+       onPageChange={handleChangePage} 
+       onRowsPerPageChange={handleChangeRowsPerPage} 
+        >
+
+      </TablePagination>
       
    </CommenPart>
   )

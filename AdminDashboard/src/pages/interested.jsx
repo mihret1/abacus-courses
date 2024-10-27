@@ -76,7 +76,7 @@ import Paper from '@mui/material/Paper';
 function Interested () {
   const [students,setStudents]=useState([])
   const [pg, setpg] = useState(0); 
-  const [rpg, setrpg] = useState(5); 
+  const [rpg, setrpg] = useState(7); 
 
   function handleChangePage(event, newpage) { 
         setpg(newpage); 
@@ -107,6 +107,8 @@ function Interested () {
 
   }
 
+ 
+
   return (
    <CommenPart>
 
@@ -135,7 +137,7 @@ function Interested () {
             </TableHead>
             <TableBody>
                { students?.slice(pg * rpg, pg * rpg + rpg).map((item,index)=>(
-                <TableRow key={item.key}>
+                <TableRow key={item.key}  className='hover:bg-gray-200'>
                   <TableCell>{index+1}</TableCell>
                   <TableCell>{item.fullname}</TableCell>
                   <TableCell>{item.phoneNumber}</TableCell>

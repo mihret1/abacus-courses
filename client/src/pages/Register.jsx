@@ -211,6 +211,8 @@ function Register() {
      setBackendSucess(false)
      setIsLoading(true);  // Start loading
      setFieldcontrol(false)
+     setMessageControl(false)
+     setErrorMessageControl(false)
 
      if(!fullname || !phone || !reciept || !account) {
       setFieldcontrol(true)
@@ -392,7 +394,7 @@ function Register() {
 
 
                         { ((errorr || backendError) && !errorMessageControl) && <p className='text-center text-xl font-semibol text-red-700'>
-                         <div  className=' flex justify-between w-full bg-[#FDEDED] px-3 py-3 text-lg ' >  <div> <ErrorOutlineIcon /> Unable to register, try again!  </div> 
+                         <div  className=' flex justify-between w-full bg-[#FDEDED] px-3 py-3' >  <div> <ErrorOutlineIcon /> Unable to register, try again!  </div> 
                            <button onClick={()=>setErrorMessageControl(true)}><ClearIcon /> </button>
                             </div>
                           </p>

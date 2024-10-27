@@ -89,6 +89,8 @@ function Home() {
      setInterestedField(false)
      setInterestedError(false)
      setInterestedSucess(false)
+     setInterestedMessageControl(false)
+     setInterestedErrorMessageControl(false)
      
      try{
       if (!interestedName || !interestedPhone || !interestedEmail){
