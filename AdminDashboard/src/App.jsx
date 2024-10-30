@@ -8,11 +8,13 @@ import Interested from './pages/interested';
 import Home from './pages/Home';
 import ForgetPassword from './pages/ForgetPassword';
 import ResetPassword from './pages/resetPassword';
+import { useParams , useLocation} from 'react-router-dom'
 
 
 
 const AppWrapper=({children})=>{
     const navigate=useNavigate()
+    const location = useLocation();
     const token=localStorage.getItem('token')
 
   useEffect(()=>{
@@ -31,8 +33,9 @@ const AppWrapper=({children})=>{
         navigate('/auth', { replace: true });
         console.log(error)
       }
-     }else if(!token){
-      // navigate('/auth',{replace:true})
+     }else if(!token && (location.pathname !==  '/forgetpassword' && !location.pathname.startsWith('/reset/') ) ){
+      navigate('/auth',{replace:true})
+      console.log(location)
 
      }
 
