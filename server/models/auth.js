@@ -8,7 +8,9 @@ const userSchema=new mongoose.Schema({
     role:{
         type:String,
         default:'user'
-    }
+    },
+    resetPasswordToken: String,
+    resetPasswordExpires: Date,
 
 })
 

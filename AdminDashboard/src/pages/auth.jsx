@@ -118,7 +118,7 @@ function Auth() {
            {(errorr && !errorMessage ) && <p className="text-red-500"> Failed, try again</p>}
            {paswordControl && <p className="text-red-500">Password atleast should be 6 digit</p>}
            <p className=" py-2 pt-3  text-[#11174b] font-semibold text-lg ">{isRegister? 'you have no account?' :'have already account?'} <button type="button" onClick={()=>setIsregister((e)=>!e)} className="text-cyan-600">{isRegister ? 'Register' :'Login'}</button></p>
-            { isRegister && <div className="w-full flex justify-between pt-4"> <span></span> <a href='' className="flex text-right text-cyan-600 text-lg">Forget Password ? </a>  </div>    }        </form>
+            { isRegister && <div className="w-full flex justify-between pt-4"> <span></span> <a href='/forgetpassword' className="flex text-right text-cyan-600 text-lg">Forget Password ? </a>  </div>    }        </form>
     </div>
   )
 }

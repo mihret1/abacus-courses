@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
 import Interested from './pages/interested';
 import Home from './pages/Home';
+import ForgetPassword from './pages/ForgetPassword';
+import ResetPassword from './pages/resetPassword';
 
 
 
@@ -30,7 +32,7 @@ const AppWrapper=({children})=>{
         console.log(error)
       }
      }else if(!token){
-      navigate('/auth',{replace:true})
+      // navigate('/auth',{replace:true})
 
      }
 
@@ -76,6 +78,11 @@ export default function App() {
           <Route path='/auth' element={<Auth/>} />
           <Route path='/interested' element={<Interested />} />
           <Route path='/student' element={<Student />} />
+          <Route path='/forgetpassword' element={<ForgetPassword />} />
+          <Route path='/reset/:token' element={<ResetPassword />} />
+
+
+
 
 
        </Routes>

@@ -2,6 +2,9 @@
 const User=require('../models/auth')
 const jwt=require('jsonwebtoken')
 const bcrypt=require('bcrypt')
+const crypto = require('crypto');
+const nodemailer = require('nodemailer');
+
 
 const Signup=async(req,res)=>{
     try{
@@ -47,6 +50,8 @@ const Login=async(req,res)=>{
 }
 
 
+
+
  const deleteUser=async(req,res)=>{
     try{
         const todelete=await User.findById(req.params.id)
@@ -60,4 +65,72 @@ const Login=async(req,res)=>{
  }
 
 
-module.exports={Login,Signup,deleteUser}
+ 
+
+const requireReset=async(req,res)=>{
+
+    try{
+        const {email}=req.body
+        const user= await User.findOne({email})
+        if (!user) return res.status(400).send('email not found')
+    
+        const token=crypto.randomBytes(32).toString('hex') 
+        user.resetPasswordToken=token
+        user.resetPasswordExpires= Date.now() + 3600000
+        await user.save()
+    
+        const transporter = nodemailer.createTransport({
+            service: 'Gmail',
+            auth: { user: 'mihlet2@gmail.com', pass: 'zwbc wwyj otox jkvj' },
+          });
+        
+          const mailOptions = {
+            to: user.email,
+            from: 'eagle',
+            subject: 'Password Reset',
+            text: `Please click on the following link to reset your password: http://localhost:5173/reset/${token}`,
+          };
+    
+          transporter.sendMail(mailOptions,(err)=>{
+            if(err) return res.status(400).send(err)
+             res.send('reset link send')   
+          })
+
+
+
+    }catch(error){
+        console.log(error)
+    }
+
+}
+
+
+
+const resetPassword=async(req,res)=>{
+        try{
+            const user = await User.findOne({
+                resetPasswordToken: req.params.token,
+                resetPasswordExpires: { $gt: Date.now() },
+              });
+        
+              if(!user) return res.status(400).send('token invalid or expire')
+                const salt=await bcrypt.genSalt(10)
+                const hashedPassword=await bcrypt.hash(req.body.password,salt)
+                user.password = hashedPassword; 
+                user.resetPasswordToken = undefined;
+                user.resetPasswordExpires = undefined;
+                await user.save();
+              
+                res.status(200).send('Password updated');  
+
+        }catch(error){
+            console.log(error)
+        }
+
+
+
+
+
+}
+
+module.exports={Login,Signup,deleteUser,requireReset,resetPassword}

@@ -8,9 +8,9 @@
 // import CreateIcon from '@mui/icons-material/Create';
 // import KeyboardArrowRightOutlinedIcon from '@mui/icons-material/KeyboardArrowRightOutlined';
 
-import { useEffect, useState } from "react";
-import CommenPart from "../components/CommenPart";
-import axios from "axios";
+// import { useEffect, useState } from "react";
+// import CommenPart from "../components/CommenPart";
+// import axios from "axios";
 
 // function Home() {
 //   return (
@@ -57,9 +57,15 @@ import axios from "axios";
 
 // export default Home
 
+
+import { useEffect, useState } from "react";
+import CommenPart from "../components/CommenPart";
+import axios from "axios";
+
 const Home=()=>{
   const [interested,setInterested]=useState(null)
   const [students,setStudents]=useState(null)
+
 
   useEffect(()=>{
     const getStudents=async()=>{
